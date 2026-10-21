@@ -1,0 +1,129 @@
+name: ci
+
+# Every push to a branch, so that one is tested before a pull request is opened for it,
+# every pull request, and whatever workflow calls this one, as a release does.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_call:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      # The application first, so that the Go build embeds it and the Go tests see it:
+      # the type check, ESLint, the types generated from the schema, Vitest, then the build.
+      - run: npm --prefix web ci
+      - run: npm --prefix web run check
+      - run: npm --prefix web run build
+
+      - name: Format
+        run: |
+          unformatted="$(gofmt -l .)"
+          if [ -n "$unformatted" ]; then
+            echo "not gofmt-formatted:"
+            echo "$unformatted"
+            exit 1
+          fi
+
+      - run: go build ./...
+      - run: go vet ./...
+
+      # The tests that need a corpus skip without one, so build both fixtures first:
+      # test/ and the git repository testgit/ made from it.
+      - name: Fixtures
+        run: tools/mkgitfixture.sh
+
+      # The ten slowest tests printed after the rest, so that a run says where its time went.
+      - run: go test -json ./... | go run ./tools/slowest
+
+      # The pages in a browser: Playwright starts origins browse on the sparse corpus
+      # tools/mkcorpora.go writes, and Vite's server in front of it.
+      - name: Browser
+        run: |
+          if [ "$RUNNER_OS" = Linux ]; then
+            (cd web && npx playwright install --with-deps chromium)
+          else
+            (cd web && npx playwright install chromium)
+          fi
+      - run: npm --prefix web run test:e2e
+
+      # A trace of every test that failed, to be opened with npx playwright show-trace.
+      - if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-${{ matrix.os }}
+          path: web/test-results/
+          if-no-files-found: ignore
+
+  # Once, on Linux: neither depends on the platform the code runs on, and neither needs
+  # the application, the placeholder standing in for it.
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - run: go run honnef.co/go/tools/cmd/staticcheck@v0.8.2 ./...
+      - run: go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...
+
+  # The release notes are made from the subjects on master. A push that replaced what
+  # was there, or the first, has no commit before it to count from, so every commit is
+  # checked; a commit with no parent starts the history and is not one of the notes.
+  subjects:
+    name: subjects
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - shell: bash
+        run: |
+          range="$AFTER"
+          if git merge-base --is-ancestor "$BEFORE" "$AFTER" 2>/dev/null; then
+            range="$BEFORE..$AFTER"
+          fi
+          git log --min-parents=1 --format=%s "$range" | tools/subjects.sh
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.event.after }}
+
+  docker:
+    name: docker
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - run: docker build -f docker/Dockerfile -t origins .

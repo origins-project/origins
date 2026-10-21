@@ -1,0 +1,21 @@
+name: Request
+description: Ask for a feature or a change.
+labels: [request]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Description
+      description: Describe the research task or the record you can't express in Origins today. A real example helps, such as the entry of a register or a census.
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: Current workaround
+      description: How you work around it today, in Origins or in another program.
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: If you have an idea of how Origins should do it, describe it here.

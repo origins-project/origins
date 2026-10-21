@@ -1,0 +1,60 @@
+/* The site keeps VitePress's own neutral colours, plain to read at length, and takes
+   from the application only its faces and its accent. */
+
+@import '../../../web/src/ui/tokens.css';
+
+:root,
+.dark {
+  --vp-font-family-base: var(--sans);
+  --vp-font-family-mono: var(--mono);
+
+  --vp-c-brand-1: var(--accent);
+  --vp-c-brand-2: var(--accent-hover);
+  --vp-c-brand-3: var(--accent);
+  --vp-c-brand-soft: var(--accent-soft);
+
+  --vp-button-brand-bg: var(--accent);
+  --vp-button-brand-hover-bg: var(--accent-hover);
+  --vp-button-brand-active-bg: var(--accent-hover);
+  --vp-button-brand-text: var(--on-accent);
+  --vp-button-brand-hover-text: var(--on-accent);
+  --vp-button-brand-active-text: var(--on-accent);
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.VPHero .name,
+.VPHero .text {
+  font-family: var(--serif);
+  letter-spacing: normal;
+}
+
+.corpus-file {
+  margin: var(--space-4) 0;
+}
+
+.corpus-path {
+  border: 1px solid var(--vp-c-divider);
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--vp-c-bg-soft);
+  padding: var(--space-1) var(--space-4);
+  font-family: var(--mono);
+  font-size: var(--text-sm);
+  color: var(--vp-c-text-2);
+}
+
+.corpus-file div[class*='language-'] {
+  margin: 0 !important;
+  border-radius: 0 0 var(--radius) var(--radius) !important;
+}
+
+/* the home page's markdown is already inside the hero's padding */
+.home-doc {
+  padding: var(--space-6) 0 var(--space-8);
+}
+
+.home-doc > * {
+  max-width: 688px;
+}

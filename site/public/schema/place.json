@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "place.json",
+  "title": "Place",
+  "description": "A place, with the names it went by, what it lies within and when it was there.",
+  "type": "object",
+  "properties": {
+    "private": {
+      "$ref": "common.json#/$defs/private"
+    },
+    "name": {
+      "$ref": "#/$defs/placeName",
+      "description": "The name the place goes by where it is."
+    },
+    "also-known-as": {
+      "type": "array",
+      "description": "Every other name the place was known by.",
+      "items": {
+        "$ref": "#/$defs/placeName"
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "What kind of place it is, an open word: city, parish, hamlet."
+    },
+    "within": {
+      "description": "What the place lies within: a scalar, or a list with dates when jurisdictions changed.",
+      "oneOf": [
+        {
+          "$ref": "common.json#/$defs/placeRef"
+        },
+        {
+          "type": "array",
+          "description": "What it lies within, with dates.",
+          "items": {
+            "$ref": "common.json#/$defs/placeRef"
+          }
+        }
+      ]
+    },
+    "coordinates": {
+      "type": "string",
+      "pattern": "^\\s*[-+]?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)\\s*,\\s*[-+]?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)\\s*$|^\\s*\\(.*\\S.*\\)\\s*$",
+      "description": "A latitude and a longitude in decimal degrees, north and east positive, or the record's words in parentheses."
+    },
+    "addresses": {
+      "$ref": "common.json#/$defs/addresses",
+      "description": "Where it lies in a reckoning other than its within: a street, a parish, a county."
+    },
+    "from": {
+      "$ref": "common.json#/$defs/date",
+      "description": "When the place came to be."
+    },
+    "until": {
+      "$ref": "common.json#/$defs/date",
+      "description": "When it ceased to be."
+    },
+    "media": {
+      "$ref": "common.json#/$defs/media"
+    },
+    "links": {
+      "$ref": "common.json#/$defs/links"
+    },
+    "sources": {
+      "$ref": "common.json#/$defs/sources",
+      "description": "What says when it began and ended, and what the record rests on as a whole."
+    },
+    "tags": {
+      "$ref": "common.json#/$defs/tags"
+    },
+    "same-as": {
+      "$ref": "common.json#/$defs/sameAs"
+    },
+    "ids": {
+      "$ref": "common.json#/$defs/ids"
+    },
+    "body": {
+      "$ref": "common.json#/$defs/body"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "placeName": {
+      "description": "A name: a bare string, or a mapping with name.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The name."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "pattern": "\\S",
+              "description": "The name."
+            },
+            "lang": {
+              "$ref": "common.json#/$defs/language",
+              "description": "The language the name is in, as a language tag: en, de, la."
+            },
+            "type": {
+              "type": "string",
+              "description": "An open word for a spelling its language does not account for: pinyin, kana."
+            },
+            "from": {
+              "$ref": "common.json#/$defs/date",
+              "description": "When the place began to be called that."
+            },
+            "until": {
+              "$ref": "common.json#/$defs/date",
+              "description": "When it stopped."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            },
+            "sources": {
+              "$ref": "common.json#/$defs/sources"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name"
+          ]
+        }
+      ]
+    }
+  }
+}

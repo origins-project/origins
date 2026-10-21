@@ -1,0 +1,57 @@
+{
+  "name": "origins-web",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/wasm.ts",
+    "dev": "vite",
+    "prebuild": "node scripts/wasm.ts",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "types": "node scripts/types.ts",
+    "colours": "node scripts/colours.ts",
+    "wasm": "node scripts/wasm.ts",
+    "precheck": "node scripts/wasm.ts",
+    "lint": "eslint . --max-warnings 0",
+    "check": "run-s type-check lint \"types -- --check\" \"colours -- --check\" \"test:unit -- --run\"",
+    "test:unit": "vitest",
+    "pretest:e2e": "node scripts/wasm.ts",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "@tanstack/vue-virtual": "^3.13.45",
+    "reka-ui": "^2.11.0",
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@tsconfig/node24": "^24.0.5",
+    "@types/jsdom": "^30.0.0",
+    "@types/node": "^24.13.4",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vitest/eslint-plugin": "^1.6.27",
+    "@vue/eslint-config-typescript": "^14.9.0",
+    "@vue/test-utils": "^2.5.0",
+    "@vue/tsconfig": "^0.9.1",
+    "eslint": "^10.13.0",
+    "eslint-plugin-playwright": "^2.12.1",
+    "eslint-plugin-vue": "^10.11.1",
+    "jiti": "^2.7.0",
+    "jsdom": "^30.0.1",
+    "json-schema-to-typescript": "^16.0.0",
+    "npm-run-all2": "^9.0.3",
+    "typescript": "~6.0.0",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11",
+    "vue-tsc": "^3.3.11"
+  },
+  "engines": {
+    "node": "^22.18.0 || >=24.12.0"
+  }
+}

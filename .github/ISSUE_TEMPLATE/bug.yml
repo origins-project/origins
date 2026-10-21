@@ -1,0 +1,43 @@
+name: Bug
+description: Origins did something wrong, or crashed.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If the problem is a GEDCOM or Gramps file that doesn't import correctly, please use the import template instead. To report a security problem, follow SECURITY.md and don't open a public issue.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The output of `origins version`, and the commit you built from if you know it.
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: Operating system
+      description: For example, Windows 11, macOS 15 or Ubuntu 24.04. For a problem in `origins browse`, also name the browser.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The commands you ran, or what you did in the browser. If you can, reproduce the problem on a small corpus and attach it.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: What Origins printed or showed. Paste the whole message.
+    validations:
+      required: true

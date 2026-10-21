@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<style>
+.tile{fill:#9c4421}.glyph{fill:none;stroke:#f5f0e8;stroke-width:59.4;stroke-linecap:round}.word{fill:#1c1f24}
+@media (prefers-color-scheme:dark){.tile{fill:#eba27e}.glyph{stroke:#15110d}.word{fill:#f5f0e8}}
+</style>
+<rect class="tile" width="600" height="600" rx="132"/>
+<g class="glyph" transform="translate(0 0)">
+<path d="M213.061 164.018V108.511M213.061 296.322V491.489M279.157 230.226H508.655M146.854 230.226H91.346"/>
+<circle cx="213.061" cy="230.226" r="66.096"/>
+</g>
+</svg>

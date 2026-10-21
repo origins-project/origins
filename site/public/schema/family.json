@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "family.json",
+  "title": "Family",
+  "description": "The people a child was born to or raised by, with the partnership between them where there was one, and the children.",
+  "type": "object",
+  "properties": {
+    "private": {
+      "$ref": "common.json#/$defs/private"
+    },
+    "partners": {
+      "type": "array",
+      "description": "The partners: a person's slug, unknown for somebody nobody knows, none for nobody at all.",
+      "items": {
+        "$ref": "#/$defs/partner"
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "A word, the list open: married, civil-union, unmarried; left out where nothing says which."
+    },
+    "children": {
+      "type": "array",
+      "description": "The children, in the order the record gives them.",
+      "items": {
+        "$ref": "#/$defs/child"
+      }
+    },
+    "events": {
+      "$ref": "common.json#/$defs/events"
+    },
+    "not": {
+      "$ref": "common.json#/$defs/not"
+    },
+    "media": {
+      "$ref": "common.json#/$defs/media"
+    },
+    "links": {
+      "$ref": "common.json#/$defs/links"
+    },
+    "sources": {
+      "$ref": "common.json#/$defs/sources",
+      "description": "What the record rests on as a whole, where no one fact does."
+    },
+    "tags": {
+      "$ref": "common.json#/$defs/tags"
+    },
+    "same-as": {
+      "$ref": "common.json#/$defs/sameAs"
+    },
+    "ids": {
+      "$ref": "common.json#/$defs/ids"
+    },
+    "body": {
+      "$ref": "common.json#/$defs/body"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "partner": {
+      "description": "A partner: a slug, or a mapping of the person or the name the record gives somebody nobody has a record of, and a note.",
+      "oneOf": [
+        {
+          "$ref": "common.json#/$defs/slug"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "person": {
+              "$ref": "common.json#/$defs/slug",
+              "description": "The person's record, unknown or none."
+            },
+            "name": {
+              "$ref": "common.json#/$defs/unflaggedName",
+              "description": "The name the record gives a partner nobody has a record of."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note",
+              "description": "What is said of that partner's place in this family alone."
+            }
+          },
+          "additionalProperties": false,
+          "oneOf": [
+            {
+              "required": [
+                "person"
+              ]
+            },
+            {
+              "required": [
+                "name"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "child": {
+      "description": "A child: the slug of a birth child of every partner, or a mapping where they are not or where the parentage needs more said of it.",
+      "oneOf": [
+        {
+          "$ref": "common.json#/$defs/slug"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "common.json#/$defs/slug",
+              "description": "The child's record, or unknown for a child the record says there was and does not name."
+            },
+            "name": {
+              "$ref": "common.json#/$defs/unflaggedName",
+              "description": "The words the record gives a child nobody has a record of."
+            },
+            "relation": {
+              "description": "One word for every partner, or a mapping from each partner to theirs: birth, adoptive, step, foster, guardian, unknown, none, the list open.",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S",
+                  "description": "The relation to every partner."
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string",
+                    "pattern": "\\S",
+                    "description": "The relation to that partner."
+                  }
+                }
+              ]
+            },
+            "status": {
+              "enum": [
+                "proven",
+                "challenged",
+                "disproven"
+              ],
+              "description": "What was concluded about the link."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            },
+            "sources": {
+              "$ref": "common.json#/$defs/sources"
+            }
+          },
+          "additionalProperties": false,
+          "oneOf": [
+            {
+              "required": [
+                "id"
+              ]
+            },
+            {
+              "required": [
+                "name"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

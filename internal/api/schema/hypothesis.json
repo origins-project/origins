@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hypothesis.json",
+  "title": "Hypothesis",
+  "description": "A proposed departure from the corpus, expressed as edits origins can apply, test and reverse.",
+  "type": "object",
+  "properties": {
+    "status": {
+      "enum": [
+        "open",
+        "accepted",
+        "rejected"
+      ],
+      "description": "Whether it is open, accepted or rejected."
+    },
+    "base": {
+      "type": "string",
+      "description": "The commit the edits apply to."
+    },
+    "confidence": {
+      "enum": [
+        "probable",
+        "possible",
+        "doubtful"
+      ],
+      "description": "How much the proposer believes it."
+    },
+    "proposed-by": {
+      "type": "string",
+      "description": "Who proposed it, left out when you proposed it yourself."
+    },
+    "supports": {
+      "$ref": "common.json#/$defs/sources",
+      "description": "The citations it rests on."
+    },
+    "contradicts": {
+      "$ref": "common.json#/$defs/sources",
+      "description": "The citations against it."
+    },
+    "edits": {
+      "type": "array",
+      "description": "The edits it proposes, in order.",
+      "items": {
+        "$ref": "#/$defs/edit"
+      }
+    },
+    "body": {
+      "$ref": "common.json#/$defs/body"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "edit": {
+      "type": "object",
+      "properties": {
+        "op": {
+          "enum": [
+            "add",
+            "create",
+            "delete",
+            "merge",
+            "remove",
+            "rename",
+            "set",
+            "split",
+            "unset"
+          ],
+          "description": "The operation."
+        },
+        "entity": {
+          "type": "string",
+          "description": "The record it is about, as kind/slug, project or tag/<word>."
+        },
+        "path": {
+          "type": "string",
+          "description": "The field path within the record, for a field operation."
+        },
+        "value": {
+          "description": "The value, spelled as a field of the record is."
+        },
+        "from": {
+          "type": "string",
+          "description": "The record a merge or a split takes from, as kind/slug."
+        },
+        "into": {
+          "description": "The record a merge folds into, or the records a split makes.",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "description": "The records a split makes.",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "to": {
+          "type": "string",
+          "description": "The name a rename gives."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "op"
+      ],
+      "description": "One edit."
+    }
+  }
+}

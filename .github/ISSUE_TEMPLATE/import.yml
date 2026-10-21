@@ -1,0 +1,54 @@
+name: Import problem
+description: A GEDCOM or Gramps file doesn't import, or imports incorrectly.
+labels: [import]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A family tree usually contains private data about living people. Before you attach a file, remove what you don't want to publish, or make a smaller file that shows the same problem.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The output of `origins version`, and the commit you built from if you know it.
+    validations:
+      required: true
+  - type: input
+    id: producer
+    attributes:
+      label: Program that wrote the file
+      description: The program and its version, for example Gramps 5.2.3 or Family Tree Maker 2019.
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Format
+      options:
+        - GEDCOM 5.5.1
+        - GEDCOM 7.0
+        - GEDCOM, another version
+        - Gramps XML (.gramps)
+        - Gramps package (.gpkg)
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and output
+      description: The `origins import` command you ran, and what it printed.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Which records are wrong or missing, and what the file says about them.
+    validations:
+      required: true
+  - type: textarea
+    id: file
+    attributes:
+      label: File
+      description: Attach the file or the smaller file here. If you can't share it, say so, and describe the part of the file that causes the problem.

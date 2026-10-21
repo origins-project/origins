@@ -1,0 +1,62 @@
+# The archives of a release, built by .github/workflows/release.yml from the tag. The
+# application and the chart's WebAssembly are built before this runs, so that every
+# binary embeds them, and THIRD_PARTY_NOTICES is checked against the build.
+version: 2
+
+project_name: origins
+
+# A snapshot is named for its commit alone, whatever tags stand behind it.
+snapshot:
+  version_template: '0.0.0-snapshot.{{ .ShortCommit }}'
+
+builds:
+  - main: ./cmd/origins
+    binary: origins
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w
+      - -X github.com/origins-project/origins/internal/api.release={{ .Version }}
+      - -X github.com/origins-project/origins/internal/api.commit={{ .FullCommit }}
+    goos: [linux, darwin, windows]
+    goarch: [amd64, arm64]
+    mod_timestamp: '{{ .CommitTimestamp }}'
+
+archives:
+  - formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+    files:
+      - LICENSE
+      - README.md
+      - THIRD_PARTY_NOTICES
+
+checksum:
+  name_template: SHA256SUMS
+  algorithm: sha256
+
+# The notes are the commits since the tag before, read through GitHub so that each
+# names its author and pull request. A tag with a file of its own in .github/notes/
+# is handed that instead with --release-notes, as v0.1.0, which has no tag before it.
+changelog:
+  use: github
+  sort: asc
+  groups:
+    - title: Features
+      regexp: '^feat(\([a-z0-9-]+\))?!?:'
+      order: 0
+    - title: Fixes
+      regexp: '^fix(\([a-z0-9-]+\))?!?:'
+      order: 1
+  filters:
+    include:
+      - '^(feat|fix)(\([a-z0-9-]+\))?!?:'
+
+# A draft, published once every archive has been tried on its own system.
+release:
+  draft: true
+  replace_existing_draft: true

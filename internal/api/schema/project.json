@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "project.json",
+  "title": "Project",
+  "description": "Who keeps the tree and for whom: the mapping origins.yaml writes under project.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The tree's name."
+    },
+    "description": {
+      "type": "string",
+      "description": "What the tree is."
+    },
+    "main-person": {
+      "$ref": "common.json#/$defs/slug",
+      "description": "Whose tree it is, and where browse starts."
+    },
+    "lang": {
+      "type": "string",
+      "description": "The language the corpus's words are in where a record does not say otherwise."
+    },
+    "copyright": {
+      "type": "string",
+      "description": "The tree's copyright, as its compiler wrote it."
+    },
+    "researchers": {
+      "type": "array",
+      "description": "Everybody who compiled it.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "\\S",
+            "description": "The researcher's name."
+          },
+          "addresses": {
+            "type": "array",
+            "description": "Where they are, citing nothing.",
+            "items": {
+              "$ref": "common.json#/$defs/researcherAddress"
+            }
+          },
+          "links": {
+            "$ref": "common.json#/$defs/links"
+          },
+          "note": {
+            "$ref": "common.json#/$defs/note"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "bookmarks": {
+      "type": "array",
+      "description": "The records the researcher keeps to hand.",
+      "items": {
+        "type": "string",
+        "pattern": "^(people|families|places|sources|repositories|notes|hypotheses)/[a-z0-9]+(-{1,2}[a-z0-9]+)*$",
+        "description": "A record kept to hand, as its kind's directory and its slug."
+      }
+    },
+    "tags": {
+      "type": "object",
+      "description": "The color and priority a tag is shown with, under its word.",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "string",
+            "description": "The color the tag is shown with."
+          },
+          "priority": {
+            "type": "string",
+            "description": "The priority the tag is shown with."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

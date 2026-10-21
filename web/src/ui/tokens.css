@@ -1,0 +1,256 @@
+/* The one place a colour, a size or a face is written. Every component reads these and
+   nothing else, so the light and the dark theme are this file's two blocks and nothing
+   more. A theme is chosen by data-theme on any element, the root or a part of a page,
+   and the root follows the system until one is. */
+
+@import '@fontsource-variable/inter/wght.css';
+@import '@fontsource-variable/newsreader/opsz.css';
+@import '@fontsource-variable/newsreader/opsz-italic.css';
+
+:root {
+  /* faces */
+  --serif: 'Newsreader Variable', 'Iowan Old Style', Charter, 'Sitka Text', Cambria, Georgia, serif;
+  --sans: 'Inter Variable', system-ui, 'Segoe UI Variable Text', 'Segoe UI', -apple-system, sans-serif;
+  --mono: ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace;
+
+  /* type */
+  --text-2xs: 0.68rem;
+  --text-xs: 0.74rem;
+  --text-sm: 0.8rem;
+  --text-md: 0.86rem;
+  --text-base: 0.94rem;
+  --text-lg: 1.05rem;
+  --text-xl: 1.3rem;
+  --text-2xl: 1.6rem;
+  --text-display: clamp(2rem, 4.2vw, 3.1rem);
+  --text-root: 15px;
+  --leading: 1.55;
+  --leading-tight: 1.15;
+  --leading-prose: 1.62;
+  --weight-medium: 500;
+  --weight-bold: 600;
+  --tracking-caps: 0.08em;
+
+  /* spacing */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* shapes */
+  --border: 1px;
+  --border-strong: 2px;
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --dot: 7px;
+  --halo: 3px;
+  --mark: 20px;
+  --kind: 26px;
+  --blur: 12px;
+  --icon: 1em;
+  --icon-stroke: 1.8;
+
+  /* controls */
+  --control: 34px;
+  --control-sm: 28px;
+  --switch-width: 30px;
+  --switch-height: 18px;
+  --switch-thumb: 14px;
+  --badge: 16px;
+  --avatar: 36px;
+  --portrait: 124px;
+  --portrait-phone: 76px;
+  --thumb: 74px;
+  --thumb-sm: 52px;
+  --scan: 16rem;
+  --chart-height: min(70vh, 40rem);
+  --moment: 12px;
+  --year: 4rem;
+  --year-phone: 2.6rem;
+  --textarea: 7rem;
+
+  /* layout */
+  --bar: 56px;
+  --page: 76rem;
+  --side: 21rem;
+  --gutter: 1.5rem;
+  --gutter-phone: 1rem;
+  --drawer: 34rem;
+  --drawer-wide: 64rem;
+  --lightbox-side: 20rem;
+  --nav-drawer: 18rem;
+  --search: 26rem;
+  --search-min: 12rem;
+  --palette: 38rem;
+  --palette-top: 12vh;
+  --palette-list: 52vh;
+  --toast: 24rem;
+  --dialog: 40rem;
+  --popover: 22rem;
+  --menu: 13rem;
+  --select: 16rem;
+  --fit-card: 13.5rem;
+  --fit-wide: 20rem;
+  --fit-stat: 8rem;
+  --overlay-gap: 2rem;
+  --offset: 4px;
+  --col-narrow: 6rem;
+  --col: 11rem;
+  --table-box: 28rem;
+
+  /* stacking */
+  --layer-bar: 20;
+  --layer-toast: 50;
+  --layer-overlay: 60;
+  --layer-palette: 70;
+
+  /* motion */
+  --quick: 0.12s;
+  --slide: 0.2s;
+}
+
+:root,
+[data-theme='light'] {
+  --bg: #f5f0e8;
+  --surface: #fffdf9;
+  --surface-2: #ede7dc;
+  --ink: #1c1f24;
+  --muted: #59534b;
+  --faint: #6c665e;
+  --line: #e6ddd0;
+  --line-strong: #d6ccbd;
+  --accent: #9c4421;
+  --accent-hover: #83381a;
+  --accent-soft: #f5e3d8;
+  --on-accent: #fff;
+  --brand: #9c4421;
+  --on-brand: #f5f0e8;
+  --suppose: #5b4a9e;
+  --suppose-hover: #4a3b85;
+  --suppose-soft: #ece8f7;
+  --on-suppose: #fff;
+  --good: #4a6b52;
+  --good-soft: #e6eee6;
+  --warn: #8c5c19;
+  --warn-soft: #f6ecd9;
+  --on-warn: #fff;
+  --danger: #a3242a;
+  --danger-soft: #f8e4e3;
+  --on-danger: #fff;
+  --male: #e6edf6;
+  --male-ink: #3f5f86;
+  --female: #f5e6ed;
+  --female-ink: #8d4a66;
+  --unknown: #ece8e1;
+  --unknown-ink: #6e665c;
+  --shadow: 0 1px 2px rgb(40 30 20 / 0.05), 0 3px 12px rgb(40 30 20 / 0.05);
+  --shadow-lg: 0 18px 50px rgb(30 20 10 / 0.22), 0 2px 6px rgb(30 20 10 / 0.08);
+  --scrim: rgb(28 22 16 / 0.38);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #15110d;
+    --surface: #1d1915;
+    --surface-2: #27221d;
+    --ink: #f5f0e8;
+    --muted: #aca296;
+    --faint: #928a7e;
+    --line: #2f2a24;
+    --line-strong: #443d35;
+    --accent: #eba27e;
+    --accent-hover: #f3b999;
+    --accent-soft: #3b261b;
+    --on-accent: #15110d;
+    --brand: #eba27e;
+    --on-brand: #15110d;
+    --suppose: #b3a4f0;
+    --suppose-hover: #c5b9f4;
+    --suppose-soft: #272238;
+    --on-suppose: #16131f;
+    --good: #92b89a;
+    --good-soft: #1f2a21;
+    --warn: #d9a656;
+    --warn-soft: #30261a;
+    --on-warn: #1a1310;
+    --danger: #ec7b76;
+    --danger-soft: #3a1e1d;
+    --on-danger: #1a1310;
+    --male: #1f2835;
+    --male-ink: #a5bedd;
+    --female: #321f28;
+    --female-ink: #e0a9c0;
+    --unknown: #2a2622;
+    --unknown-ink: #aca296;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 18px 50px rgb(0 0 0 / 0.55);
+    --scrim: rgb(0 0 0 / 0.55);
+    color-scheme: dark;
+  }
+}
+
+[data-theme='dark'] {
+  --bg: #15110d;
+  --surface: #1d1915;
+  --surface-2: #27221d;
+  --ink: #f5f0e8;
+  --muted: #aca296;
+  --faint: #928a7e;
+  --line: #2f2a24;
+  --line-strong: #443d35;
+  --accent: #eba27e;
+  --accent-hover: #f3b999;
+  --accent-soft: #3b261b;
+  --on-accent: #15110d;
+  --brand: #eba27e;
+  --on-brand: #15110d;
+  --suppose: #b3a4f0;
+  --suppose-hover: #c5b9f4;
+  --suppose-soft: #272238;
+  --on-suppose: #16131f;
+  --good: #92b89a;
+  --good-soft: #1f2a21;
+  --warn: #d9a656;
+  --warn-soft: #30261a;
+  --on-warn: #1a1310;
+  --danger: #ec7b76;
+  --danger-soft: #3a1e1d;
+  --on-danger: #1a1310;
+  --male: #1f2835;
+  --male-ink: #a5bedd;
+  --female: #321f28;
+  --female-ink: #e0a9c0;
+  --unknown: #2a2622;
+  --unknown-ink: #aca296;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 18px 50px rgb(0 0 0 / 0.55);
+  --scrim: rgb(0 0 0 / 0.55);
+  color-scheme: dark;
+}
+
+/* What a control acts with: the accent, and the supposing colour while the tab is
+   supposing, so that every control says which of the two places it writes to. */
+:root,
+[data-theme] {
+  --act: var(--accent);
+  --act-hover: var(--accent-hover);
+  --act-soft: var(--accent-soft);
+  --on-act: var(--on-accent);
+}
+
+[data-supposing] {
+  --act: var(--suppose);
+  --act-hover: var(--suppose-hover);
+  --act-soft: var(--suppose-soft);
+  --on-act: var(--on-suppose);
+}

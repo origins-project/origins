@@ -1,0 +1,19 @@
+{
+  "name": "origins-site",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "npm --prefix ../web run build && vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "2.0.0-alpha.20",
+    "vue": "^3.5.42"
+  },
+  "engines": {
+    "node": "^22.18.0 || >=24.12.0"
+  }
+}

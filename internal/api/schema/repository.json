@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository.json",
+  "title": "Repository",
+  "description": "The archive, library, parish office or website a source is kept in.",
+  "type": "object",
+  "properties": {
+    "private": {
+      "$ref": "common.json#/$defs/private"
+    },
+    "name": {
+      "type": "string",
+      "description": "The repository's name."
+    },
+    "type": {
+      "type": "string",
+      "description": "What kind of repository it is, an open word: archive, library."
+    },
+    "addresses": {
+      "$ref": "common.json#/$defs/addresses"
+    },
+    "media": {
+      "$ref": "common.json#/$defs/media"
+    },
+    "links": {
+      "$ref": "common.json#/$defs/links"
+    },
+    "tags": {
+      "$ref": "common.json#/$defs/tags"
+    },
+    "same-as": {
+      "$ref": "common.json#/$defs/sameAs"
+    },
+    "ids": {
+      "$ref": "common.json#/$defs/ids"
+    },
+    "body": {
+      "$ref": "common.json#/$defs/body"
+    }
+  },
+  "additionalProperties": false
+}

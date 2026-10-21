@@ -1,0 +1,24 @@
+name: title
+
+# A pull request is squashed into one commit whose subject is its title, so the title
+# is held to the form the release notes are made from. The ruleset on master requires
+# this check.
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+permissions:
+  contents: read
+
+jobs:
+  title:
+    name: title
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      # The title is the contributor's text, so it reaches the shell through the
+      # environment and never through the workflow's expressions.
+      - run: printf '%s\n' "$TITLE" | tools/subjects.sh
+        env:
+          TITLE: ${{ github.event.pull_request.title }}

@@ -1,0 +1,46 @@
+/* What every overlay is drawn with: the scrim behind a modal, and the header and footer
+   of a drawer and a dialog. */
+
+.overlay-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: var(--layer-overlay);
+  background: var(--scrim);
+  animation: overlay-fade var(--slide) ease;
+}
+
+.overlay-scrim[data-state='closed'] {
+  animation: overlay-fade var(--slide) ease reverse forwards;
+}
+
+.overlay-head {
+  display: flex;
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.overlay-title {
+  margin: 0;
+  flex: 1;
+  font: var(--weight-medium) var(--text-xl) / var(--leading-tight) var(--serif);
+}
+
+.overlay-path {
+  font: var(--text-2xs) var(--mono);
+  color: var(--faint);
+  overflow-wrap: anywhere;
+}
+
+.overlay-foot {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+@keyframes overlay-fade {
+  from {
+    opacity: 0;
+  }
+}

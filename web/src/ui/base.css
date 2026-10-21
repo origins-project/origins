@@ -1,0 +1,97 @@
+/* What every element is drawn with before a component draws it, read off the tokens.
+   A page writes plain elements — a heading, a paragraph, a link — and they come out
+   as every other page has them. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: var(--text-root);
+}
+
+body,
+[data-theme] {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  margin: 0;
+  font: var(--text-base) / var(--leading) var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--act);
+  text-decoration-color: currentColor;
+}
+
+h1 {
+  font: 400 var(--text-display) / 1.06 var(--serif);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+h2 {
+  font: var(--weight-medium) var(--text-xl) / var(--leading-tight) var(--serif);
+  margin: 0;
+}
+
+h3 {
+  font: var(--weight-medium) var(--text-lg) / var(--leading-tight) var(--serif);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+kbd {
+  font: var(--weight-medium) var(--text-2xs) var(--sans);
+  border: var(--border) solid var(--line-strong);
+  border-bottom-width: var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0 var(--space-1);
+  color: var(--muted);
+  background: var(--surface);
+}
+
+code {
+  font: var(--text-sm) var(--mono);
+}
+
+:focus-visible {
+  outline: var(--border-strong) solid var(--act);
+  outline-offset: var(--border-strong);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+  }
+}

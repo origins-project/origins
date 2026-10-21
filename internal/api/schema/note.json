@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "note.json",
+  "title": "Note",
+  "description": "What is about no record in particular: a research log, a list of things to do, a letter to an archive.",
+  "type": "object",
+  "properties": {
+    "private": {
+      "$ref": "common.json#/$defs/private"
+    },
+    "title": {
+      "type": "string",
+      "description": "The note's title, which its slug is made from."
+    },
+    "events": {
+      "$ref": "common.json#/$defs/events",
+      "description": "Events about nobody the corpus has a record for."
+    },
+    "media": {
+      "$ref": "common.json#/$defs/media"
+    },
+    "links": {
+      "$ref": "common.json#/$defs/links"
+    },
+    "sources": {
+      "$ref": "common.json#/$defs/sources"
+    },
+    "tags": {
+      "$ref": "common.json#/$defs/tags"
+    },
+    "same-as": {
+      "$ref": "common.json#/$defs/sameAs"
+    },
+    "ids": {
+      "$ref": "common.json#/$defs/ids"
+    },
+    "body": {
+      "$ref": "common.json#/$defs/body"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,2678 @@
+{
+  "project": {
+    "name": "Marchena Sólveigarson family",
+    "main-person": "verdier-jean-baptiste",
+    "bookmarks": [
+      "person/verdier-jean-baptiste",
+      "source/parish-san-lorenzo-baptisms",
+      "note/a-london-wedding-of-1859"
+    ],
+    "tags": {
+      "Emigrants": {
+        "color": "#2a7"
+      },
+      "To do": {
+        "color": "#d33",
+        "priority": "1"
+      }
+    }
+  },
+  "people": [
+    {
+      "ref": "person/al-halabi-1889",
+      "name": "الحلبي",
+      "also-known-as": [
+        "al-Ḥalabī"
+      ],
+      "surname": "الحلبي",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "12 MAY 1889",
+        "sort": "1889-05-12",
+        "place": "alexandria"
+      },
+      "death": {
+        "type": "death",
+        "date": "12 MAY 1889",
+        "sort": "1889-05-12",
+        "place": "alexandria"
+      },
+      "child-in": [
+        "al-halabi-mahmud--verdier-anna"
+      ]
+    },
+    {
+      "ref": "person/al-halabi-mahmud",
+      "name": "أبو يوسف محمود بن علي بن حسن الحلبي",
+      "also-known-as": [
+        "Abū Yūsuf Maḥmūd ibn ʿAlī ibn Ḥasan al-Ḥalabī"
+      ],
+      "surname": "الحلبي",
+      "given": "محمود",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "ABT 1850",
+        "sort": "1850-01-01"
+      },
+      "death": {
+        "type": "death",
+        "date": "1915",
+        "sort": "1915-01-01",
+        "place": "alexandria"
+      },
+      "partner-in": [
+        "al-halabi-mahmud--verdier-anna"
+      ]
+    },
+    {
+      "ref": "person/al-halabi-zaynab",
+      "name": "زينب بنت محمود الحلبي",
+      "also-known-as": [
+        "Zaynab bint Maḥmūd al-Ḥalabī"
+      ],
+      "surname": "الحلبي",
+      "given": "زينب",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "ISLAMIC 3 SHAWW 1304",
+        "sort": "1887-06-25",
+        "place": "alexandria"
+      },
+      "death": {
+        "type": "death",
+        "date": "1960",
+        "sort": "1960-01-01",
+        "place": "alexandria"
+      },
+      "child-in": [
+        "al-halabi-mahmud--verdier-anna"
+      ]
+    },
+    {
+      "ref": "person/andersson-per",
+      "name": "Per Andersson",
+      "also-known-as": [
+        "Per Rapp"
+      ],
+      "surname": "Andersson",
+      "given": "Per",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "EST BET 1670 AND 1685",
+        "sort": "1670-01-01"
+      },
+      "partner-in": [
+        "andersson-per--unknown"
+      ]
+    },
+    {
+      "ref": "person/bak-seoyeon",
+      "name": "박서연",
+      "also-known-as": [
+        "Bak Seo-yeon"
+      ],
+      "surname": "박",
+      "given": "서연",
+      "sex": "F",
+      "living": true,
+      "birth": {
+        "type": "birth",
+        "date": "1990",
+        "sort": "1990-01-01",
+        "place": "busan"
+      },
+      "partner-in": [
+        "bak-seoyeon--marchena-lucas"
+      ]
+    },
+    {
+      "ref": "person/benitez-rosa",
+      "name": "Rosa Benítez",
+      "surname": "Benítez",
+      "given": "Rosa",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "1862",
+        "sort": "1862-01-01",
+        "place": "buenos-aires"
+      },
+      "death": {
+        "type": "death",
+        "date": "1931",
+        "sort": "1931-01-01",
+        "place": "buenos-aires"
+      },
+      "partner-in": [
+        "benitez-rosa--ershov-michael"
+      ]
+    },
+    {
+      "ref": "person/chen-jialan",
+      "name": "陳家蘭",
+      "also-known-as": [
+        "Chén Jiālán"
+      ],
+      "surname": "陳",
+      "given": "家蘭",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "1914",
+        "sort": "1914-01-01",
+        "place": "wenzhou"
+      },
+      "death": {
+        "type": "death",
+        "date": "1990",
+        "sort": "1990-01-01",
+        "place": "paris"
+      },
+      "partner-in": [
+        "chen-jialan--galvao-joao"
+      ],
+      "child-in": [
+        "chen-yongfu--unknown"
+      ]
+    },
+    {
+      "ref": "person/chen-jiaming",
+      "name": "陳家明",
+      "also-known-as": [
+        "Chén Jiāmíng"
+      ],
+      "surname": "陳",
+      "given": "家明",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "1912",
+        "sort": "1912-01-01",
+        "place": "wenzhou"
+      },
+      "death": {
+        "type": "death",
+        "date": "1980",
+        "sort": "1980-01-01",
+        "place": "wenzhou"
+      },
+      "child-in": [
+        "chen-yongfu--unknown"
+      ]
+    },
+    {
+      "ref": "person/chen-yongfu",
+      "name": "陳永福",
+      "also-known-as": [
+        "Chén Yǒngfú",
+        "Louis",
+        "CH'EN Yung-fu"
+      ],
+      "surname": "陳",
+      "given": "永福",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "3 AUG 1888",
+        "sort": "1888-08-03",
+        "place": "wenzhou"
+      },
+      "death": {
+        "type": "death",
+        "date": "1954",
+        "sort": "1954-01-01",
+        "place": "paris"
+      },
+      "partner-in": [
+        "chen-yongfu--unknown"
+      ],
+      "child-in": [
+        "chen-yuying--unknown"
+      ]
+    },
+    {
+      "ref": "person/chen-yuying",
+      "name": "陳玉英",
+      "also-known-as": [
+        "Chén Yùyīng",
+        "Teresa"
+      ],
+      "surname": "陳",
+      "given": "玉英",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "1865",
+        "sort": "1865-01-01",
+        "place": "wenzhou"
+      },
+      "death": {
+        "type": "death",
+        "date": "1932",
+        "sort": "1932-01-01",
+        "place": "wenzhou"
+      },
+      "partner-in": [
+        "chen-yuying--none",
+        "chen-yuying--unknown"
+      ]
+    },
+    {
+      "ref": "person/doe-john",
+      "name": "John Doe",
+      "surname": "Doe",
+      "given": "John",
+      "sex": "M",
+      "living": true
+    },
+    {
+      "ref": "person/ershov-ivan",
+      "name": "Иван Петрович Ершов",
+      "also-known-as": [
+        "Ivan Petrovich Ershov"
+      ],
+      "surname": "Ершов",
+      "given": "Иван",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "JULIAN 3 MAR 1818 (3/15 марта 1818)",
+        "sort": "1818-03-15",
+        "place": "nizhny-tagil"
+      },
+      "death": {
+        "type": "death",
+        "date": "1870",
+        "sort": "1870-01-01",
+        "place": "london"
+      },
+      "partner-in": [
+        "ershov-ivan--lang-anna-maria"
+      ]
+    },
+    {
+      "ref": "person/ershov-ivan-1885",
+      "name": "Iván “Vanya” Ershov",
+      "surname": "Ershov",
+      "given": "Iván",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "1885",
+        "sort": "1885-01-01",
+        "place": "buenos-aires"
+      },
+      "death": {
+        "type": "death",
+        "date": "1960",
+        "sort": "1960-01-01",
+        "place": "buenos-aires"
+      },
+      "partner-in": [
+        "ershov-ivan-1885--modiano-rachel"
+      ],
+      "child-in": [
+        "benitez-rosa--ershov-michael"
+      ]
+    },
+    {
+      "ref": "person/ershov-lawrence",
+      "name": "Lawrence Henry Ershov",
+      "surname": "Ershov",
+      "given": "Lawrence Henry",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "17 MAR 1866",
+        "sort": "1866-03-17",
+        "place": "london"
+      },
+      "child-in": [
+        "verdier-louisa--unknown"
+      ]
+    },
+    {
+      "ref": "person/ershov-michael",
+      "name": "Michael Ershov",
+      "tags": [
+        "Emigrants"
+      ],
+      "surname": "Ershov",
+      "given": "Michael",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "1856",
+        "sort": "1856-01-01",
+        "place": "london"
+      },
+      "death": {
+        "type": "death",
+        "date": "NOV (just before the feast)"
+      },
+      "partner-in": [
+        "benitez-rosa--ershov-michael"
+      ],
+      "child-in": [
+        "ershov-ivan--lang-anna-maria"
+      ]
+    },
+    {
+      "ref": "person/galvao-claudia",
+      "name": "Cláudia Chen Galvão",
+      "also-known-as": [
+        "Cláudia Galvão de Marchena"
+      ],
+      "surname": "Galvão",
+      "given": "Cláudia",
+      "sex": "F",
+      "living": true,
+      "birth": {
+        "type": "birth",
+        "date": "1946",
+        "sort": "1946-01-01",
+        "place": "paris"
+      },
+      "partner-in": [
+        "galvao-claudia--marchena-pablo",
+        "galvao-claudia--ofori-kwame"
+      ],
+      "child-in": [
+        "chen-jialan--galvao-joao"
+      ]
+    },
+    {
+      "ref": "person/galvao-helena",
+      "name": "Helena Verdier Galvão",
+      "surname": "Galvão",
+      "given": "Helena",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "2 FEB 1920",
+        "sort": "1920-02-02",
+        "place": "lisboa"
+      },
+      "death": {
+        "type": "death",
+        "date": "2001",
+        "sort": "2001-01-01",
+        "place": "lisboa"
+      },
+      "child-in": [
+        "galvao-henrique--verdier-pauline",
+        "wit-geertruida--unknown"
+      ]
+    },
+    {
+      "ref": "person/galvao-henrique",
+      "name": "Henrique de Cerqueira Galvão",
+      "surname": "Galvão",
+      "given": "Henrique",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "1878",
+        "sort": "1878-01-01",
+        "place": "lisboa"
+      },
+      "death": {
+        "type": "death",
+        "date": "1949",
+        "sort": "1949-01-01",
+        "place": "lisboa"
+      },
+      "partner-in": [
+        "galvao-henrique--verdier-pauline"
+      ]
+    },
+    {
+      "ref": "person/galvao-joao",
+      "name": "João Verdier Galvão",
+      "surname": "Galvão",
+      "given": "João",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "1902",
+        "sort": "1902-01-01",
+        "place": "lisboa"
+      },
+      "death": {
+        "type": "death",
+        "date": "1975",
+        "sort": "1975-01-01",
+        "place": "paris"
+      },
+      "partner-in": [
+        "chen-jialan--galvao-joao"
+      ],
+      "child-in": [
+        "galvao-henrique--verdier-pauline"
+      ]
+    },
+    {
+      "ref": "person/gunnarsdottir-solveig",
+      "name": "Sólveig Gunnarsdóttir",
+      "surname": "Gunnarsdóttir",
+      "given": "Sólveig",
+      "sex": "F",
+      "living": true,
+      "birth": {
+        "type": "birth",
+        "date": "1953",
+        "sort": "1953-01-01",
+        "place": "reykjavik"
+      },
+      "partner-in": [
+        "gunnarsdottir-solveig--vitthal-ramesh"
+      ],
+      "child-in": [
+        "jonsson-gunnar--rahimi-parvin"
+      ]
+    },
+    {
+      "ref": "person/jonsson-gunnar",
+      "name": "Gunnar Jónsson",
+      "surname": "Jónsson",
+      "given": "Gunnar",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "1925",
+        "sort": "1925-01-01",
+        "place": "reykjavik"
+      },
+      "death": {
+        "type": "death",
+        "date": "1999",
+        "sort": "1999-01-01",
+        "place": "reykjavik"
+      },
+      "partner-in": [
+        "jonsson-gunnar--rahimi-parvin"
+      ]
+    },
+    {
+      "ref": "person/lang-anna-maria",
+      "name": "Anna Maria Lang",
+      "also-known-as": [
+        "Anna Maria Verdier",
+        "Anna Maria Ershov"
+      ],
+      "surname": "Lang",
+      "given": "Anna Maria",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "ABT 1812",
+        "sort": "1812-01-01",
+        "place": "hamburg"
+      },
+      "death": {
+        "type": "death",
+        "date": "14 JUL 1878",
+        "sort": "1878-07-14",
+        "place": "london"
+      },
+      "partner-in": [
+        "ershov-ivan--lang-anna-maria",
+        "lang-anna-maria--verdier-louis"
+      ],
+      "child-in": [
+        "lang-georg--rossi-caterina"
+      ]
+    },
+    {
+      "ref": "person/lang-georg",
+      "name": "Johann Georg Lang",
+      "surname": "Lang",
+      "given": "Johann Georg",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "CAL 1772",
+        "sort": "1772-01-01",
+        "place": "stade"
+      },
+      "death": {
+        "type": "death",
+        "date": "19 OCT 1841",
+        "sort": "1841-10-19",
+        "place": "hamburg"
+      },
+      "partner-in": [
+        "lang-georg--rossi-caterina"
+      ],
+      "child-in": [
+        "persdotter-karin--unknown"
+      ]
+    },
+    {
+      "ref": "person/lang-joseph",
+      "name": "Joseph Lang",
+      "surname": "Lang",
+      "given": "Joseph",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "2 JAN 1810",
+        "sort": "1810-01-02",
+        "place": "hamburg"
+      },
+      "death": {
+        "type": "death",
+        "date": "5 JAN 1810",
+        "sort": "1810-01-05",
+        "place": "hamburg"
+      },
+      "child-in": [
+        "lang-georg--rossi-caterina"
+      ]
+    },
+    {
+      "ref": "person/marchena-lucas",
+      "name": "Lucas Marchena Sato",
+      "surname": "Marchena",
+      "given": "Lucas",
+      "sex": "M",
+      "living": true,
+      "birth": {
+        "type": "birth",
+        "date": "1988",
+        "sort": "1988-01-01",
+        "place": "madrid"
+      },
+      "portrait": {
+        "record": "person/marchena-lucas",
+        "file": "photos/1988-christening.jpg"
+      },
+      "partner-in": [
+        "bak-seoyeon--marchena-lucas"
+      ],
+      "child-in": [
+        "marchena-pablo--sato-yumiko"
+      ]
+    },
+    {
+      "ref": "person/marchena-marco",
+      "name": "Marco Marchena Chen",
+      "surname": "Marchena",
+      "given": "Marco",
+      "sex": "M",
+      "living": true,
+      "birth": {
+        "type": "birth",
+        "date": "14 MAR 1975 09:20",
+        "sort": "1975-03-14",
+        "place": "madrid"
+      },
+      "portrait": {
+        "record": "person/marchena-marco",
+        "file": "photos/2019-at-home.jpg"
+      },
+      "partner-in": [
+        "marchena-marco--solveigarson-stefan"
+      ],
+      "child-in": [
+        "galvao-claudia--marchena-pablo"
+      ]
+    },
+    {
+      "ref": "person/marchena-pablo",
+      "name": "Pablo Marchena Ruiz",
+      "surname": "Marchena",
+      "given": "Pablo",
+      "sex": "M",
+      "living": true,
+      "birth": {
+        "type": "birth",
+        "date": "1945",
+        "sort": "1945-01-01",
+        "place": "madrid"
+      },
+      "partner-in": [
+        "galvao-claudia--marchena-pablo",
+        "marchena-pablo--sato-yumiko"
+      ]
+    },
+    {
+      "ref": "person/marchena-solveigarson-sasha",
+      "name": "Sasha Marchena Sólveigarson",
+      "surname": "Marchena",
+      "given": "Sasha",
+      "sex": "X",
+      "living": true,
+      "birth": {
+        "type": "birth",
+        "date": "3 APR 2018",
+        "sort": "2018-04-03",
+        "place": "amsterdam"
+      },
+      "portrait": {
+        "record": "person/marchena-marco",
+        "file": "photos/2019-at-home.jpg"
+      },
+      "child-in": [
+        "marchena-marco--solveigarson-stefan"
+      ]
+    },
+    {
+      "ref": "person/modiano-rachel",
+      "name": "Rachel Modiano",
+      "also-known-as": [
+        "Raquel Ershov",
+        "רחל מודיאנו"
+      ],
+      "surname": "Modiano",
+      "given": "Rachel",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "HEBREW 17 IYR 5661",
+        "sort": "1901-05-06",
+        "place": "thessaloniki"
+      },
+      "death": {
+        "type": "death",
+        "date": "1969",
+        "sort": "1969-01-01",
+        "place": "buenos-aires"
+      },
+      "partner-in": [
+        "ershov-ivan-1885--modiano-rachel"
+      ]
+    },
+    {
+      "ref": "person/ofori-kwame",
+      "name": "Kwame Ofori",
+      "surname": "Ofori",
+      "given": "Kwame",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "7 JAN 1950",
+        "sort": "1950-01-07",
+        "place": "kumasi"
+      },
+      "partner-in": [
+        "galvao-claudia--ofori-kwame"
+      ]
+    },
+    {
+      "ref": "person/papadopoulou-maria",
+      "name": "Μαρία Παπαδοπούλου",
+      "also-known-as": [
+        "Maria Papadopoulou",
+        "Maria Papadopulo",
+        "Maria Verdier"
+      ],
+      "surname": "Παπαδοπούλου",
+      "given": "Μαρία",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "FEB 1840",
+        "sort": "1840-02-01",
+        "place": "trieste"
+      },
+      "death": {
+        "type": "death",
+        "date": "AFT 1901",
+        "sort": "1901-01-01"
+      },
+      "portrait": {
+        "record": "family/papadopoulou-maria--verdier-jean-baptiste",
+        "file": "photos/1858-wedding-group.jpg",
+        "region": [
+          0.41,
+          0.12,
+          0.58,
+          0.47
+        ]
+      },
+      "partner-in": [
+        "papadopoulou-maria--verdier-jean-baptiste"
+      ]
+    },
+    {
+      "ref": "person/persdotter-karin",
+      "name": "Karin Persdotter",
+      "surname": "Persdotter",
+      "given": "Karin",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "ABT 1735",
+        "sort": "1735-01-01",
+        "place": "stade"
+      },
+      "death": {
+        "type": "death",
+        "date": "1791",
+        "sort": "1791-01-01",
+        "place": "stade"
+      },
+      "partner-in": [
+        "persdotter-karin--unknown"
+      ],
+      "child-in": [
+        "andersson-per--unknown"
+      ]
+    },
+    {
+      "ref": "person/rahimi-parvin",
+      "name": "پروین رحیمی",
+      "also-known-as": [
+        "Parvin Rahimi"
+      ],
+      "surname": "رحیمی",
+      "given": "پروین",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "PERSIAN 1308",
+        "sort": "1929-03-21",
+        "place": "tehran"
+      },
+      "death": {
+        "type": "death",
+        "date": "2010",
+        "sort": "2010-01-01",
+        "place": "reykjavik"
+      },
+      "partner-in": [
+        "jonsson-gunnar--rahimi-parvin"
+      ]
+    },
+    {
+      "ref": "person/rossi-bartolomeo",
+      "name": "Bartolomeo Rossi",
+      "surname": "Rossi",
+      "given": "Bartolomeo",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "12 FEB 1750/51",
+        "sort": "1751-02-12",
+        "place": "pian-del-mugnone"
+      },
+      "death": {
+        "type": "death",
+        "date": "1799",
+        "sort": "1799-01-01",
+        "place": "pian-del-mugnone"
+      },
+      "partner-in": [
+        "rossi-bartolomeo--sarti-angela",
+        "rossi-bartolomeo--sarti-angela-1778"
+      ]
+    },
+    {
+      "ref": "person/rossi-caterina",
+      "name": "Caterina Rossi",
+      "also-known-as": [
+        "Katharina Lang"
+      ],
+      "surname": "Rossi",
+      "given": "Caterina",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "3 APR 1779",
+        "sort": "1779-04-03",
+        "place": "pian-del-mugnone"
+      },
+      "death": {
+        "type": "death",
+        "date": "1840",
+        "sort": "1840-01-01",
+        "place": "hamburg"
+      },
+      "partner-in": [
+        "lang-georg--rossi-caterina"
+      ],
+      "child-in": [
+        "rossi-bartolomeo--sarti-angela-1778"
+      ]
+    },
+    {
+      "ref": "person/sarti-angela",
+      "name": "Angela Sarti",
+      "surname": "Sarti",
+      "given": "Angela",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "EST 1755",
+        "sort": "1755-01-01"
+      },
+      "death": {
+        "type": "death",
+        "date": "3 MAR",
+        "place": "pian-del-mugnone"
+      },
+      "partner-in": [
+        "rossi-bartolomeo--sarti-angela",
+        "rossi-bartolomeo--sarti-angela-1778"
+      ]
+    },
+    {
+      "ref": "person/sato-yumiko",
+      "name": "佐藤由美子",
+      "also-known-as": [
+        "Satō Yumiko",
+        "さとう ゆみこ"
+      ],
+      "private": true,
+      "surname": "佐藤",
+      "given": "由美子",
+      "sex": "F",
+      "living": true,
+      "birth": {
+        "type": "birth",
+        "date": "21 JUN 1955",
+        "sort": "1955-06-21",
+        "place": "tono"
+      },
+      "portrait": {
+        "record": "person/marchena-lucas",
+        "file": "photos/1988-christening.jpg"
+      },
+      "partner-in": [
+        "marchena-pablo--sato-yumiko"
+      ]
+    },
+    {
+      "ref": "person/solveigarson-stefan",
+      "name": "Stefán Sólveigarson",
+      "surname": "Sólveigarson",
+      "given": "Stefán",
+      "sex": "M",
+      "living": true,
+      "birth": {
+        "type": "birth",
+        "date": "8 NOV 1978",
+        "sort": "1978-11-08",
+        "place": "reykjavik"
+      },
+      "portrait": {
+        "record": "person/marchena-marco",
+        "file": "photos/2019-at-home.jpg"
+      },
+      "partner-in": [
+        "marchena-marco--solveigarson-stefan"
+      ],
+      "child-in": [
+        "gunnarsdottir-solveig--vitthal-ramesh"
+      ]
+    },
+    {
+      "ref": "person/verdier-anna",
+      "name": "Anna Verdier",
+      "surname": "Verdier",
+      "given": "Anna",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "9 SEP 1860",
+        "sort": "1860-09-09",
+        "place": "london"
+      },
+      "partner-in": [
+        "al-halabi-mahmud--verdier-anna"
+      ],
+      "child-in": [
+        "papadopoulou-maria--verdier-jean-baptiste"
+      ]
+    },
+    {
+      "ref": "person/verdier-jean-baptiste",
+      "name": "Jean Baptiste Verdier",
+      "also-known-as": [
+        "J. B. Verdier",
+        "John Verdia"
+      ],
+      "surname": "Verdier",
+      "given": "Jean Baptiste",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "12 MAR 1834",
+        "sort": "1834-03-12",
+        "place": "london"
+      },
+      "death": {
+        "type": "death",
+        "date": "3 NOV 1901",
+        "sort": "1901-11-03",
+        "place": "london"
+      },
+      "portrait": {
+        "record": "person/verdier-jean-baptiste",
+        "file": "photos/1890-portrait.jpg"
+      },
+      "partner-in": [
+        "papadopoulou-maria--verdier-jean-baptiste"
+      ],
+      "child-in": [
+        "lang-anna-maria--verdier-louis"
+      ]
+    },
+    {
+      "ref": "person/verdier-louis",
+      "name": "Louis Verdier",
+      "surname": "Verdier",
+      "given": "Louis",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "FRENCH_R 12 FLOR 7",
+        "sort": "1799-05-01",
+        "place": "lyon"
+      },
+      "death": {
+        "type": "death",
+        "date": "BET 1845 AND 1851",
+        "sort": "1845-01-01",
+        "place": "london"
+      },
+      "partner-in": [
+        "lang-anna-maria--verdier-louis"
+      ]
+    },
+    {
+      "ref": "person/verdier-louisa",
+      "name": "Louisa Verdier",
+      "surname": "Verdier",
+      "given": "Louisa",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "1842",
+        "sort": "1842-01-01",
+        "place": "london"
+      },
+      "partner-in": [
+        "verdier-louisa--unknown"
+      ],
+      "child-in": [
+        "lang-anna-maria--verdier-louis"
+      ]
+    },
+    {
+      "ref": "person/verdier-pauline",
+      "name": "Pauline Verdier",
+      "surname": "Verdier",
+      "given": "Pauline",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "4 JUN 1863",
+        "sort": "1863-06-04",
+        "place": "london"
+      },
+      "death": {
+        "type": "death",
+        "date": "1941",
+        "sort": "1941-01-01",
+        "place": "lisboa"
+      },
+      "partner-in": [
+        "galvao-henrique--verdier-pauline"
+      ],
+      "child-in": [
+        "papadopoulou-maria--verdier-jean-baptiste"
+      ]
+    },
+    {
+      "ref": "person/verdier-pierre",
+      "name": "Pierre Verdier",
+      "surname": "Verdier",
+      "given": "Pierre",
+      "sex": "M",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "4 JUN 1863",
+        "sort": "1863-06-04",
+        "place": "london"
+      },
+      "death": {
+        "type": "death",
+        "date": "1863",
+        "sort": "1863-01-01",
+        "place": "london"
+      },
+      "child-in": [
+        "papadopoulou-maria--verdier-jean-baptiste"
+      ]
+    },
+    {
+      "ref": "person/vitthal-ramesh",
+      "name": "रमेश विठ्ठल",
+      "also-known-as": [
+        "Ramesh Vitthal",
+        "रमेश विठ्ठल कासेगावकर"
+      ],
+      "surname": "विठ्ठल",
+      "given": "रमेश",
+      "sex": "M",
+      "living": true,
+      "birth": {
+        "type": "birth",
+        "date": "1950",
+        "sort": "1950-01-01",
+        "place": "kasegaon"
+      },
+      "partner-in": [
+        "gunnarsdottir-solveig--vitthal-ramesh"
+      ]
+    },
+    {
+      "ref": "person/wit-geertruida",
+      "name": "Geertruida Maria de Wit",
+      "surname": "Wit",
+      "given": "Geertruida Maria",
+      "sex": "F",
+      "living": false,
+      "birth": {
+        "type": "birth",
+        "date": "1895",
+        "sort": "1895-01-01",
+        "place": "amsterdam"
+      },
+      "death": {
+        "type": "Burial",
+        "place": "lisboa"
+      },
+      "portrait": {
+        "record": "person/wit-geertruida",
+        "file": "photos/gravestone.jpg"
+      },
+      "partner-in": [
+        "wit-geertruida--unknown"
+      ]
+    }
+  ],
+  "families": [
+    {
+      "ref": "family/al-halabi-mahmud--verdier-anna",
+      "type": "married",
+      "partners": [
+        {
+          "person": "al-halabi-mahmud"
+        },
+        {
+          "person": "verdier-anna"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "ISLAMIC 12 RAJAB 1302",
+        "sort": "1885-04-27",
+        "place": "alexandria"
+      },
+      "children": [
+        {
+          "person": "al-halabi-zaynab",
+          "relations": [
+            {
+              "partner": "al-halabi-mahmud",
+              "relation": "birth"
+            },
+            {
+              "partner": "verdier-anna",
+              "relation": "birth"
+            }
+          ]
+        },
+        {
+          "person": "al-halabi-1889",
+          "relations": [
+            {
+              "partner": "al-halabi-mahmud",
+              "relation": "birth"
+            },
+            {
+              "partner": "verdier-anna",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/andersson-per--unknown",
+      "partners": [
+        {
+          "person": "andersson-per"
+        },
+        {
+          "person": "unknown"
+        }
+      ],
+      "children": [
+        {
+          "person": "persdotter-karin",
+          "relations": [
+            {
+              "partner": "andersson-per",
+              "relation": "birth"
+            },
+            {
+              "partner": "unknown",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/bak-seoyeon--marchena-lucas",
+      "type": "married",
+      "partners": [
+        {
+          "person": "bak-seoyeon"
+        },
+        {
+          "person": "marchena-lucas"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "2016",
+        "sort": "2016-01-01",
+        "place": "madrid"
+      }
+    },
+    {
+      "ref": "family/benitez-rosa--ershov-michael",
+      "type": "married",
+      "partners": [
+        {
+          "person": "benitez-rosa"
+        },
+        {
+          "person": "ershov-michael"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "1884",
+        "sort": "1884-01-01",
+        "place": "buenos-aires"
+      },
+      "children": [
+        {
+          "person": "ershov-ivan-1885",
+          "relations": [
+            {
+              "partner": "benitez-rosa",
+              "relation": "birth"
+            },
+            {
+              "partner": "ershov-michael",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/chen-jialan--galvao-joao",
+      "partners": [
+        {
+          "person": "chen-jialan"
+        },
+        {
+          "person": "galvao-joao"
+        }
+      ],
+      "first": {
+        "type": "residence",
+        "date": "FROM 1940",
+        "sort": "1940-01-01",
+        "place": "paris"
+      },
+      "children": [
+        {
+          "person": "galvao-claudia",
+          "relations": [
+            {
+              "partner": "chen-jialan",
+              "relation": "birth"
+            },
+            {
+              "partner": "galvao-joao",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/chen-yongfu--unknown",
+      "partners": [
+        {
+          "person": "chen-yongfu"
+        },
+        {
+          "person": "unknown"
+        }
+      ],
+      "children": [
+        {
+          "person": "chen-jiaming",
+          "relations": [
+            {
+              "partner": "chen-yongfu",
+              "relation": "birth"
+            },
+            {
+              "partner": "unknown",
+              "relation": "birth"
+            }
+          ]
+        },
+        {
+          "person": "chen-jialan",
+          "relations": [
+            {
+              "partner": "chen-yongfu",
+              "relation": "birth"
+            },
+            {
+              "partner": "unknown",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/chen-yuying--none",
+      "partners": [
+        {
+          "person": "chen-yuying"
+        },
+        {
+          "person": "none"
+        }
+      ],
+      "children": [
+        {
+          "name": "陳玉珍",
+          "relations": [
+            {
+              "partner": "chen-yuying",
+              "relation": "adoptive"
+            },
+            {
+              "partner": "none",
+              "relation": "adoptive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/chen-yuying--unknown",
+      "partners": [
+        {
+          "person": "chen-yuying"
+        },
+        {
+          "person": "unknown"
+        }
+      ],
+      "children": [
+        {
+          "person": "chen-yongfu",
+          "relations": [
+            {
+              "partner": "chen-yuying",
+              "relation": "natural"
+            },
+            {
+              "partner": "unknown",
+              "relation": "natural"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/ershov-ivan--lang-anna-maria",
+      "type": "married",
+      "partners": [
+        {
+          "person": "ershov-ivan"
+        },
+        {
+          "person": "lang-anna-maria"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "7 MAY 1853",
+        "sort": "1853-05-07",
+        "place": "london"
+      },
+      "children": [
+        {
+          "person": "ershov-michael",
+          "relations": [
+            {
+              "partner": "ershov-ivan",
+              "relation": "birth"
+            },
+            {
+              "partner": "lang-anna-maria",
+              "relation": "birth"
+            }
+          ]
+        },
+        {
+          "person": "ershov-lawrence",
+          "relations": [
+            {
+              "partner": "ershov-ivan",
+              "relation": "birth"
+            },
+            {
+              "partner": "lang-anna-maria",
+              "relation": "birth"
+            }
+          ],
+          "status": "disproven"
+        }
+      ]
+    },
+    {
+      "ref": "family/ershov-ivan-1885--modiano-rachel",
+      "type": "married",
+      "partners": [
+        {
+          "person": "ershov-ivan-1885"
+        },
+        {
+          "person": "modiano-rachel"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "14 OCT 1934",
+        "sort": "1934-10-14",
+        "place": "buenos-aires"
+      }
+    },
+    {
+      "ref": "family/galvao-claudia--marchena-pablo",
+      "type": "married",
+      "partners": [
+        {
+          "person": "galvao-claudia"
+        },
+        {
+          "person": "marchena-pablo"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "4 SEP 1971",
+        "sort": "1971-09-04",
+        "place": "madrid"
+      },
+      "children": [
+        {
+          "person": "marchena-marco",
+          "relations": [
+            {
+              "partner": "galvao-claudia",
+              "relation": "birth"
+            },
+            {
+              "partner": "marchena-pablo",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/galvao-claudia--ofori-kwame",
+      "private": true,
+      "type": "unmarried",
+      "partners": [
+        {
+          "person": "galvao-claudia"
+        },
+        {
+          "person": "ofori-kwame"
+        }
+      ],
+      "first": {
+        "type": "residence",
+        "date": "FROM 1991",
+        "sort": "1991-01-01",
+        "place": "madrid"
+      }
+    },
+    {
+      "ref": "family/galvao-henrique--verdier-pauline",
+      "type": "married",
+      "partners": [
+        {
+          "person": "galvao-henrique"
+        },
+        {
+          "person": "verdier-pauline"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "11 JUN 1900",
+        "sort": "1900-06-11",
+        "place": "lisboa"
+      },
+      "children": [
+        {
+          "person": "galvao-joao",
+          "relations": [
+            {
+              "partner": "galvao-henrique",
+              "relation": "birth"
+            },
+            {
+              "partner": "verdier-pauline",
+              "relation": "birth"
+            }
+          ]
+        },
+        {
+          "person": "galvao-helena",
+          "relations": [
+            {
+              "partner": "galvao-henrique",
+              "relation": "step"
+            },
+            {
+              "partner": "verdier-pauline",
+              "relation": "adoptive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/gunnarsdottir-solveig--vitthal-ramesh",
+      "partners": [
+        {
+          "person": "gunnarsdottir-solveig"
+        },
+        {
+          "person": "vitthal-ramesh"
+        }
+      ],
+      "children": [
+        {
+          "person": "solveigarson-stefan",
+          "relations": [
+            {
+              "partner": "gunnarsdottir-solveig",
+              "relation": "birth"
+            },
+            {
+              "partner": "vitthal-ramesh",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/jonsson-gunnar--rahimi-parvin",
+      "type": "married",
+      "partners": [
+        {
+          "person": "jonsson-gunnar"
+        },
+        {
+          "person": "rahimi-parvin"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "1952",
+        "sort": "1952-01-01",
+        "place": "edinburgh"
+      },
+      "children": [
+        {
+          "person": "gunnarsdottir-solveig",
+          "relations": [
+            {
+              "partner": "jonsson-gunnar",
+              "relation": "birth"
+            },
+            {
+              "partner": "rahimi-parvin",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/lang-anna-maria--verdier-louis",
+      "type": "married",
+      "partners": [
+        {
+          "person": "lang-anna-maria"
+        },
+        {
+          "person": "verdier-louis"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "ABT 1832",
+        "sort": "1832-01-01",
+        "place": "london"
+      },
+      "children": [
+        {
+          "person": "verdier-jean-baptiste",
+          "relations": [
+            {
+              "partner": "lang-anna-maria",
+              "relation": "birth"
+            },
+            {
+              "partner": "verdier-louis",
+              "relation": "birth"
+            }
+          ]
+        },
+        {
+          "person": "verdier-louisa",
+          "relations": [
+            {
+              "partner": "lang-anna-maria",
+              "relation": "birth"
+            },
+            {
+              "partner": "verdier-louis",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/lang-georg--rossi-caterina",
+      "type": "married",
+      "partners": [
+        {
+          "person": "lang-georg"
+        },
+        {
+          "person": "rossi-caterina"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "1802",
+        "sort": "1802-01-01",
+        "place": "firenze"
+      },
+      "children": [
+        {
+          "person": "lang-joseph",
+          "relations": [
+            {
+              "partner": "lang-georg",
+              "relation": "birth"
+            },
+            {
+              "partner": "rossi-caterina",
+              "relation": "birth"
+            }
+          ]
+        },
+        {
+          "person": "lang-anna-maria",
+          "relations": [
+            {
+              "partner": "lang-georg",
+              "relation": "birth"
+            },
+            {
+              "partner": "rossi-caterina",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/marchena-marco--solveigarson-stefan",
+      "type": "civil-union",
+      "partners": [
+        {
+          "person": "marchena-marco"
+        },
+        {
+          "person": "solveigarson-stefan"
+        }
+      ],
+      "first": {
+        "type": "civil-union",
+        "date": "19 MAY 2018",
+        "sort": "2018-05-19",
+        "place": "amsterdam"
+      },
+      "children": [
+        {
+          "person": "marchena-solveigarson-sasha",
+          "relations": [
+            {
+              "partner": "marchena-marco",
+              "relation": "unknown"
+            },
+            {
+              "partner": "solveigarson-stefan",
+              "relation": "unknown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/marchena-pablo--sato-yumiko",
+      "type": "married",
+      "partners": [
+        {
+          "person": "marchena-pablo"
+        },
+        {
+          "person": "sato-yumiko"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "1986",
+        "sort": "1986-01-01",
+        "place": "madrid"
+      },
+      "children": [
+        {
+          "person": "marchena-lucas",
+          "relations": [
+            {
+              "partner": "marchena-pablo",
+              "relation": "birth"
+            },
+            {
+              "partner": "sato-yumiko",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/papadopoulou-maria--verdier-jean-baptiste",
+      "type": "married",
+      "partners": [
+        {
+          "person": "papadopoulou-maria"
+        },
+        {
+          "person": "verdier-jean-baptiste"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "21 APR 1858",
+        "sort": "1858-04-21",
+        "place": "london"
+      },
+      "children": [
+        {
+          "person": "verdier-anna",
+          "relations": [
+            {
+              "partner": "papadopoulou-maria",
+              "relation": "birth"
+            },
+            {
+              "partner": "verdier-jean-baptiste",
+              "relation": "birth"
+            }
+          ]
+        },
+        {
+          "person": "verdier-pauline",
+          "relations": [
+            {
+              "partner": "papadopoulou-maria",
+              "relation": "birth"
+            },
+            {
+              "partner": "verdier-jean-baptiste",
+              "relation": "birth"
+            }
+          ]
+        },
+        {
+          "person": "verdier-pierre",
+          "relations": [
+            {
+              "partner": "papadopoulou-maria",
+              "relation": "birth"
+            },
+            {
+              "partner": "verdier-jean-baptiste",
+              "relation": "birth"
+            }
+          ]
+        },
+        {
+          "person": "unknown",
+          "relations": [
+            {
+              "partner": "papadopoulou-maria",
+              "relation": "birth"
+            },
+            {
+              "partner": "verdier-jean-baptiste",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/persdotter-karin--unknown",
+      "partners": [
+        {
+          "person": "persdotter-karin"
+        },
+        {
+          "name": "Hinrich Lang"
+        }
+      ],
+      "children": [
+        {
+          "person": "lang-georg",
+          "relations": [
+            {
+              "partner": "persdotter-karin",
+              "relation": "birth"
+            },
+            {
+              "partner": "unknown",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/rossi-bartolomeo--sarti-angela",
+      "type": "clandestine",
+      "partners": [
+        {
+          "person": "rossi-bartolomeo"
+        },
+        {
+          "person": "sarti-angela"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "1775",
+        "sort": "1775-01-01"
+      }
+    },
+    {
+      "ref": "family/rossi-bartolomeo--sarti-angela-1778",
+      "partners": [
+        {
+          "person": "rossi-bartolomeo"
+        },
+        {
+          "person": "sarti-angela"
+        }
+      ],
+      "first": {
+        "type": "marriage",
+        "date": "BEF 1778",
+        "sort": "1778-01-01"
+      },
+      "children": [
+        {
+          "person": "rossi-caterina",
+          "relations": [
+            {
+              "partner": "rossi-bartolomeo",
+              "relation": "birth"
+            },
+            {
+              "partner": "sarti-angela",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/verdier-louisa--unknown",
+      "partners": [
+        {
+          "person": "verdier-louisa"
+        },
+        {
+          "person": "unknown"
+        }
+      ],
+      "children": [
+        {
+          "person": "ershov-lawrence",
+          "relations": [
+            {
+              "partner": "verdier-louisa",
+              "relation": "birth"
+            },
+            {
+              "partner": "unknown",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "family/wit-geertruida--unknown",
+      "partners": [
+        {
+          "person": "wit-geertruida"
+        },
+        {
+          "person": "unknown"
+        }
+      ],
+      "children": [
+        {
+          "person": "galvao-helena",
+          "relations": [
+            {
+              "partner": "wit-geertruida",
+              "relation": "birth"
+            },
+            {
+              "partner": "unknown",
+              "relation": "birth"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "places": [
+    {
+      "ref": "place/alexandria",
+      "name": "الإسكندرية",
+      "also-known-as": [
+        "al-Iskandariyya",
+        "Alexandria"
+      ],
+      "type": "city",
+      "coordinates": {
+        "latitude": 31.2001,
+        "longitude": 29.9187
+      },
+      "references": 7
+    },
+    {
+      "ref": "place/amsterdam",
+      "name": "Amsterdam",
+      "type": "city",
+      "coordinates": {
+        "latitude": 52.3676,
+        "longitude": 4.9041
+      },
+      "references": 4
+    },
+    {
+      "ref": "place/buenos-aires",
+      "name": "Buenos Aires",
+      "type": "city",
+      "coordinates": {
+        "latitude": -34.6037,
+        "longitude": -58.3816
+      },
+      "references": 7
+    },
+    {
+      "ref": "place/busan",
+      "name": "부산",
+      "also-known-as": [
+        "Busan",
+        "Pusan"
+      ],
+      "type": "city",
+      "coordinates": {
+        "latitude": 35.1796,
+        "longitude": 129.0756
+      },
+      "references": 1
+    },
+    {
+      "ref": "place/edinburgh",
+      "name": "Edinburgh",
+      "type": "city",
+      "coordinates": {
+        "latitude": 55.9533,
+        "longitude": -3.1883
+      },
+      "references": 2
+    },
+    {
+      "ref": "place/firenze",
+      "name": "Firenze",
+      "also-known-as": [
+        "Florence",
+        "Florenz"
+      ],
+      "type": "city",
+      "within": [
+        {
+          "place": "granducato-di-toscana",
+          "until": "1860"
+        },
+        {
+          "place": "toscana",
+          "from": "1861"
+        }
+      ],
+      "coordinates": {
+        "latitude": 43.7696,
+        "longitude": 11.2558
+      },
+      "references": 3
+    },
+    {
+      "ref": "place/granducato-di-toscana",
+      "name": "Granducato di Toscana",
+      "also-known-as": [
+        "Grand Duchy of Tuscany"
+      ],
+      "type": "state",
+      "references": 2
+    },
+    {
+      "ref": "place/hamburg",
+      "name": "Hamburg",
+      "type": "city",
+      "coordinates": {
+        "latitude": 53.5511,
+        "longitude": 9.9937
+      },
+      "references": 6
+    },
+    {
+      "ref": "place/iwate",
+      "name": "岩手県",
+      "also-known-as": [
+        "Iwate"
+      ],
+      "type": "prefecture",
+      "references": 1
+    },
+    {
+      "ref": "place/kasegaon",
+      "name": "कासेगाव",
+      "also-known-as": [
+        "Kasegaon"
+      ],
+      "type": "village",
+      "coordinates": {
+        "latitude": 17.1167,
+        "longitude": 74.2
+      },
+      "references": 1
+    },
+    {
+      "ref": "place/kinkerstraat-41",
+      "name": "Kinkerstraat 41",
+      "private": true,
+      "type": "address",
+      "within": [
+        {
+          "place": "amsterdam"
+        }
+      ],
+      "references": 1
+    },
+    {
+      "ref": "place/kumasi",
+      "name": "Kumasi",
+      "type": "city",
+      "coordinates": {
+        "latitude": 6.6885,
+        "longitude": -1.6244
+      },
+      "references": 1
+    },
+    {
+      "ref": "place/lisboa",
+      "name": "Lisboa",
+      "also-known-as": [
+        "Lisbon"
+      ],
+      "type": "city",
+      "coordinates": {
+        "latitude": 38.7223,
+        "longitude": -9.1393
+      },
+      "references": 10
+    },
+    {
+      "ref": "place/london",
+      "name": "London",
+      "type": "city",
+      "coordinates": {
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      },
+      "references": 23
+    },
+    {
+      "ref": "place/lyon",
+      "name": "Lyon",
+      "type": "city",
+      "coordinates": {
+        "latitude": 45.764,
+        "longitude": 4.8357
+      },
+      "references": 1
+    },
+    {
+      "ref": "place/madrid",
+      "name": "Madrid",
+      "type": "city",
+      "coordinates": {
+        "latitude": 40.4168,
+        "longitude": -3.7038
+      },
+      "references": 10
+    },
+    {
+      "ref": "place/nizhny-tagil",
+      "name": "Нижний Тагил",
+      "also-known-as": [
+        "Nizhny Tagil"
+      ],
+      "type": "town",
+      "coordinates": {
+        "latitude": 57.9194,
+        "longitude": 59.965
+      },
+      "references": 2
+    },
+    {
+      "ref": "place/paris",
+      "name": "Paris",
+      "type": "city",
+      "coordinates": {
+        "latitude": 48.8566,
+        "longitude": 2.3522
+      },
+      "references": 7
+    },
+    {
+      "ref": "place/pian-del-mugnone",
+      "name": "Pian del Mugnone",
+      "type": "hamlet",
+      "within": [
+        {
+          "place": "granducato-di-toscana",
+          "until": "1860"
+        },
+        {
+          "place": "toscana",
+          "from": "1861"
+        }
+      ],
+      "coordinates": {
+        "wording": "43°48'N 11°17'E"
+      },
+      "references": 4
+    },
+    {
+      "ref": "place/reykjavik",
+      "name": "Reykjavík",
+      "type": "city",
+      "coordinates": {
+        "latitude": 64.1466,
+        "longitude": -21.9426
+      },
+      "references": 5
+    },
+    {
+      "ref": "place/stade",
+      "name": "Stade",
+      "type": "town",
+      "coordinates": {
+        "latitude": 53.5997,
+        "longitude": 9.4767
+      },
+      "references": 3
+    },
+    {
+      "ref": "place/tehran",
+      "name": "تهران",
+      "also-known-as": [
+        "Tehran"
+      ],
+      "type": "city",
+      "coordinates": {
+        "latitude": 35.6892,
+        "longitude": 51.389
+      },
+      "references": 2
+    },
+    {
+      "ref": "place/thessaloniki",
+      "name": "Θεσσαλονίκη",
+      "also-known-as": [
+        "Thessaloniki",
+        "Selanik",
+        "Salonicco"
+      ],
+      "type": "city",
+      "coordinates": {
+        "latitude": 40.6401,
+        "longitude": 22.9444
+      },
+      "references": 3
+    },
+    {
+      "ref": "place/tono",
+      "name": "遠野市",
+      "also-known-as": [
+        "Tōno"
+      ],
+      "type": "city",
+      "within": [
+        {
+          "place": "iwate"
+        }
+      ],
+      "coordinates": {
+        "latitude": 39.3275,
+        "longitude": 141.5333
+      },
+      "references": 1
+    },
+    {
+      "ref": "place/toscana",
+      "name": "Toscana",
+      "also-known-as": [
+        "Tuscany"
+      ],
+      "type": "region",
+      "references": 2
+    },
+    {
+      "ref": "place/trieste",
+      "name": "Trieste",
+      "also-known-as": [
+        "Triest",
+        "Τεργέστη"
+      ],
+      "type": "city",
+      "coordinates": {
+        "latitude": 45.6495,
+        "longitude": 13.7768
+      },
+      "references": 1
+    },
+    {
+      "ref": "place/wenzhou",
+      "name": "溫州",
+      "also-known-as": [
+        "Wēnzhōu",
+        "Wenchow"
+      ],
+      "type": "city",
+      "coordinates": {
+        "latitude": 27.9938,
+        "longitude": 120.6994
+      },
+      "references": 6
+    }
+  ],
+  "sources": [
+    {
+      "ref": "source/alexandria-sharia-court-1302",
+      "name": "محكمة الإسكندرية الشرعية — سجل عقود الزواج، ١٣٠٢",
+      "type": "court-record",
+      "kept": [
+        {
+          "repository": "dar-al-wathaiq"
+        }
+      ],
+      "citations": 1,
+      "anchors": [
+        "marriage-al-halabi"
+      ]
+    },
+    {
+      "ref": "source/amsterdam-births-2018",
+      "name": "Gemeente Amsterdam, Akte van geboorte, 2018",
+      "type": "civil-registration",
+      "citations": 4,
+      "anchors": [
+        "2018-021733"
+      ]
+    },
+    {
+      "ref": "source/amsterdam-population-register",
+      "name": "Bevolkingsregister Amsterdam, 1893-1939",
+      "type": "census",
+      "kept": [
+        {
+          "repository": "stadsarchief-amsterdam"
+        }
+      ],
+      "citations": 1,
+      "anchors": [
+        "de-wit-1895"
+      ]
+    },
+    {
+      "ref": "source/census-1861-england",
+      "name": "Census of England and Wales, 1861 — Christ Church, Spitalfields",
+      "type": "census",
+      "kept": [
+        {
+          "repository": "the-national-archives"
+        }
+      ],
+      "citations": 5,
+      "anchors": [
+        "f088",
+        "f214"
+      ]
+    },
+    {
+      "ref": "source/cimitero-san-lorenzo-gravestones",
+      "name": "Cimitero di San Lorenzo — surviving gravestones, photographed 2018",
+      "type": "gravestone",
+      "kept": [
+        {
+          "repository": "papers-of-ingrid-de-vries"
+        }
+      ],
+      "citations": 1,
+      "anchors": [
+        "sarti-angela"
+      ]
+    },
+    {
+      "ref": "source/claudia-interview-2019",
+      "name": "Recorded interview with Cláudia Chen Galvão, March 2019",
+      "private": true,
+      "type": "interview",
+      "author": "Ingrid de Vries",
+      "kept": [
+        {
+          "repository": "papers-of-ingrid-de-vries"
+        }
+      ],
+      "citations": 2,
+      "anchors": [
+        "adoption-helena",
+        "death-michael"
+      ]
+    },
+    {
+      "ref": "source/french-church-london-baptisms",
+      "name": "French Protestant Church of London, Threadneedle Street — Baptisms 1830-1849",
+      "type": "parish-register",
+      "kept": [
+        {
+          "repository": "the-national-archives",
+          "call-number": "RG 4"
+        }
+      ],
+      "citations": 8,
+      "anchors": [
+        "1834-042",
+        "1842-007"
+      ]
+    },
+    {
+      "ref": "source/hamburg-st-michaelis-baptisms",
+      "name": "Hauptkirche St. Michaelis, Hamburg — Taufregister 1805-1815",
+      "type": "parish-register",
+      "kept": [
+        {
+          "repository": "staatsarchiv-hamburg"
+        }
+      ],
+      "citations": 2,
+      "anchors": [
+        "1810-003",
+        "1812-017"
+      ]
+    },
+    {
+      "ref": "source/lisboa-santa-isabel-baptisms",
+      "name": "Paróquia de Santa Isabel, Lisboa — Registo de baptismos 1875-1880",
+      "type": "parish-register",
+      "kept": [
+        {
+          "repository": "arquivo-nacional-torre-do-tombo"
+        }
+      ],
+      "citations": 1,
+      "anchors": [
+        "1878-091"
+      ]
+    },
+    {
+      "ref": "source/london-marriages-1858",
+      "name": "General Register Office, Marriage Certificate, Whitechapel, 1858",
+      "type": "civil-registration",
+      "kept": [
+        {
+          "repository": "the-national-archives"
+        }
+      ],
+      "citations": 2,
+      "anchors": [
+        "p112"
+      ]
+    },
+    {
+      "ref": "source/nizhny-tagil-revision-1834",
+      "name": "Ревизская сказка, Нижнетагильский завод, 1834",
+      "type": "census",
+      "kept": [
+        {
+          "repository": "gaso"
+        }
+      ],
+      "citations": 1,
+      "anchors": [
+        "ershov-ivan"
+      ]
+    },
+    {
+      "ref": "source/ofori-family-account",
+      "name": "The Ofori family's account, as told at Kumasi, 2012",
+      "type": "interview",
+      "author": "Ingrid de Vries",
+      "citations": 1,
+      "anchors": [
+        "kwame"
+      ]
+    },
+    {
+      "ref": "source/parish-san-lorenzo-baptisms",
+      "name": "Basilica di San Lorenzo, Firenze — Baptismal Register 1770-1790",
+      "short-title": "S. Lorenzo, Battesimi 12",
+      "type": "parish-register",
+      "kept": [
+        {
+          "repository": "archivio-diocesano-di-firenze",
+          "call-number": "ADF/SL/B/12"
+        },
+        {
+          "repository": "archivio-diocesano-di-firenze",
+          "call-number": "S. Lorenzo, Battesimi XII"
+        },
+        {
+          "repository": "archivio-di-stato-di-firenze",
+          "call-number": "Film 1903581",
+          "medium": "microfilm"
+        }
+      ],
+      "citations": 3,
+      "anchors": [
+        "1779-042"
+      ]
+    },
+    {
+      "ref": "source/salonica-community-births",
+      "name": "Jewish Community of Salonica — Register of Births 5655-5665",
+      "type": "parish-register",
+      "kept": [
+        {
+          "repository": "cahjp"
+        }
+      ],
+      "citations": 1,
+      "anchors": [
+        "5661-073"
+      ]
+    },
+    {
+      "ref": "source/tono-koseki",
+      "name": "遠野市 戸籍謄本, 佐藤家",
+      "type": "civil-registration",
+      "citations": 1,
+      "anchors": [
+        "sato-yumiko"
+      ]
+    },
+    {
+      "ref": "source/trieste-greek-baptisms",
+      "name": "San Nicolò dei Greci, Trieste — Baptismal Register 1835-1845",
+      "type": "parish-register",
+      "citations": 1,
+      "anchors": [
+        "1840-018"
+      ]
+    },
+    {
+      "ref": "source/upplands-regemente-rolls",
+      "name": "Upplands regemente, generalmönsterrullor 1700-1712",
+      "type": "military",
+      "kept": [
+        {
+          "repository": "krigsarkivet"
+        }
+      ],
+      "citations": 2,
+      "anchors": [
+        "1704-rapp"
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "ref": "repository/archivio-di-stato-di-firenze",
+      "name": "Archivio di Stato di Firenze",
+      "type": "archive",
+      "sources": [
+        "parish-san-lorenzo-baptisms"
+      ]
+    },
+    {
+      "ref": "repository/archivio-diocesano-di-firenze",
+      "name": "Archivio Diocesano di Firenze",
+      "type": "archive",
+      "sources": [
+        "parish-san-lorenzo-baptisms"
+      ]
+    },
+    {
+      "ref": "repository/arquivo-nacional-torre-do-tombo",
+      "name": "Arquivo Nacional Torre do Tombo",
+      "type": "archive",
+      "sources": [
+        "lisboa-santa-isabel-baptisms"
+      ]
+    },
+    {
+      "ref": "repository/cahjp",
+      "name": "Central Archives for the History of the Jewish People",
+      "type": "archive",
+      "sources": [
+        "salonica-community-births"
+      ]
+    },
+    {
+      "ref": "repository/dar-al-wathaiq",
+      "name": "دار الوثائق القومية",
+      "type": "archive",
+      "sources": [
+        "alexandria-sharia-court-1302"
+      ]
+    },
+    {
+      "ref": "repository/gaso",
+      "name": "Государственный архив Свердловской области",
+      "type": "archive",
+      "sources": [
+        "nizhny-tagil-revision-1834"
+      ]
+    },
+    {
+      "ref": "repository/krigsarkivet",
+      "name": "Krigsarkivet",
+      "type": "archive",
+      "sources": [
+        "upplands-regemente-rolls"
+      ]
+    },
+    {
+      "ref": "repository/papers-of-ingrid-de-vries",
+      "name": "Ingrid de Vries's papers",
+      "private": true,
+      "type": "private-collection",
+      "sources": [
+        "cimitero-san-lorenzo-gravestones",
+        "claudia-interview-2019"
+      ]
+    },
+    {
+      "ref": "repository/staatsarchiv-hamburg",
+      "name": "Staatsarchiv Hamburg",
+      "type": "archive",
+      "sources": [
+        "hamburg-st-michaelis-baptisms"
+      ]
+    },
+    {
+      "ref": "repository/stadsarchief-amsterdam",
+      "name": "Stadsarchief Amsterdam",
+      "type": "archive",
+      "sources": [
+        "amsterdam-population-register"
+      ]
+    },
+    {
+      "ref": "repository/the-national-archives",
+      "name": "The National Archives",
+      "type": "archive",
+      "sources": [
+        "census-1861-england",
+        "french-church-london-baptisms",
+        "london-marriages-1858"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "ref": "note/a-london-wedding-of-1859",
+      "name": "A London wedding of 1859",
+      "events": [
+        {
+          "type": "marriage",
+          "date": "3 OCT 1859",
+          "sort": "1859-10-03",
+          "place": "london",
+          "with": [
+            {
+              "person": "lang-anna-maria",
+              "role": "witness"
+            },
+            {
+              "name": "Jan Kowalski",
+              "role": "groom"
+            },
+            {
+              "name": "Bridget Murphy",
+              "role": "bride"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "note/the-boatman-of-wenzhou",
+      "name": "The boatman of Wenzhou",
+      "private": true
+    }
+  ],
+  "hypotheses": [
+    {
+      "ref": "hypothesis/louisa-born-1844",
+      "name": "Was Louisa born in 1844 rather than 1842?",
+      "status": "rejected",
+      "confidence": "possible",
+      "base": "8f78553"
+    },
+    {
+      "ref": "hypothesis/unrecorded-child-1845",
+      "name": "Was there a further child between 1842 and Louis's death?",
+      "status": "open",
+      "confidence": "possible",
+      "base": "8f78553"
+    }
+  ],
+  "problems": []
+}

@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source.json",
+  "title": "Source",
+  "description": "A thing that exists in the world, and the citations into it, each a named anchor.",
+  "type": "object",
+  "properties": {
+    "private": {
+      "$ref": "common.json#/$defs/private"
+    },
+    "title": {
+      "type": "string",
+      "description": "The source's title."
+    },
+    "short-title": {
+      "type": "string",
+      "description": "The abbreviation it is cited by."
+    },
+    "type": {
+      "type": "string",
+      "description": "What kind of source it is, an open word: parish-register, census, book."
+    },
+    "author": {
+      "type": "string",
+      "description": "Its author, for a book or a website."
+    },
+    "publication": {
+      "type": "string",
+      "description": "Where and when it was published, for a book or a website."
+    },
+    "covers": {
+      "type": "array",
+      "description": "What a register or an index records.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "type": "array",
+            "description": "The events it records, in the words an event's type is written in.",
+            "items": {
+              "type": "string",
+              "pattern": "\\S",
+              "description": "An event's type."
+            }
+          },
+          "date": {
+            "$ref": "common.json#/$defs/date",
+            "description": "The period over which it records them."
+          },
+          "place": {
+            "$ref": "common.json#/$defs/slug",
+            "description": "The place it records them for."
+          },
+          "note": {
+            "$ref": "common.json#/$defs/note"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "repositories": {
+      "type": "array",
+      "description": "Where it is kept.",
+      "items": {
+        "description": "A repository's slug, or a mapping of the repository, the call number, the medium and a note.",
+        "oneOf": [
+          {
+            "$ref": "common.json#/$defs/slug"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "repository": {
+                "$ref": "common.json#/$defs/slug",
+                "description": "The repository's slug."
+              },
+              "call-number": {
+                "type": "string",
+                "description": "The call number it is kept under there."
+              },
+              "medium": {
+                "type": "string",
+                "description": "The medium it is kept in, an open word: book, microfilm, electronic."
+              },
+              "note": {
+                "$ref": "common.json#/$defs/note"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "attributes": {
+      "$ref": "common.json#/$defs/attributes",
+      "description": "What else is said of it, the agency that kept it among them."
+    },
+    "text": {
+      "type": "string",
+      "description": "The source's own words where it is short enough to copy whole."
+    },
+    "citations": {
+      "type": "object",
+      "description": "The entries cited, each under its anchor.",
+      "additionalProperties": {
+        "$ref": "#/$defs/citation"
+      }
+    },
+    "media": {
+      "$ref": "common.json#/$defs/media"
+    },
+    "links": {
+      "$ref": "common.json#/$defs/links",
+      "description": "Where it is online."
+    },
+    "tags": {
+      "$ref": "common.json#/$defs/tags"
+    },
+    "same-as": {
+      "$ref": "common.json#/$defs/sameAs"
+    },
+    "ids": {
+      "$ref": "common.json#/$defs/ids"
+    },
+    "body": {
+      "$ref": "common.json#/$defs/body"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "citation": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "type": "string",
+          "description": "The kind of entry it is, in the words an event's type is written in."
+        },
+        "page": {
+          "type": "string",
+          "description": "The locator somebody reads: c. 88r, n. 112."
+        },
+        "date": {
+          "$ref": "common.json#/$defs/date",
+          "description": "The date the entry was written."
+        },
+        "text": {
+          "type": "string",
+          "description": "The transcription."
+        },
+        "with": {
+          "type": "array",
+          "description": "Who the entry names and as what.",
+          "items": {
+            "$ref": "#/$defs/namedIn"
+          }
+        },
+        "images": {
+          "type": "array",
+          "description": "The scans of it, each a path or a media entry whose region marks the entry on the page.",
+          "items": {
+            "$ref": "common.json#/$defs/mediaEntry"
+          }
+        },
+        "links": {
+          "$ref": "common.json#/$defs/links",
+          "description": "The image of this entry online."
+        },
+        "attributes": {
+          "$ref": "common.json#/$defs/attributes",
+          "description": "What else is said of the entry."
+        },
+        "note": {
+          "$ref": "common.json#/$defs/note",
+          "description": "What the researcher says of the entry as against what it says."
+        },
+        "tags": {
+          "$ref": "common.json#/$defs/tags"
+        },
+        "ids": {
+          "$ref": "common.json#/$defs/ids",
+          "description": "What an export identified the entry by."
+        }
+      },
+      "additionalProperties": false,
+      "description": "An entry of the source: a pointer into it."
+    },
+    "namedIn": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "common.json#/$defs/slug",
+          "description": "The person's record, or unknown for somebody the record says was there and does not name."
+        },
+        "name": {
+          "$ref": "common.json#/$defs/unflaggedName",
+          "description": "The name the record gives somebody who has no record."
+        },
+        "role": {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "Their part in it, an open word: godfather, godmother, witness, informant, officiant, groom, bride."
+        },
+        "age": {
+          "$ref": "common.json#/$defs/age",
+          "description": "The age the record gives them."
+        },
+        "attributes": {
+          "$ref": "common.json#/$defs/attributes"
+        },
+        "note": {
+          "$ref": "common.json#/$defs/note"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "role"
+      ],
+      "oneOf": [
+        {
+          "required": [
+            "person"
+          ]
+        },
+        {
+          "required": [
+            "name"
+          ]
+        }
+      ]
+    }
+  }
+}

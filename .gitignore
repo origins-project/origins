@@ -1,0 +1,12 @@
+/origins
+/origins.exe
+/origins.exe~
+test
+.idea
+testgit
+/internal/browse/app/dist
+/corpora
+/dist
+/site/node_modules
+/site/.vitepress/dist
+/site/.vitepress/cache

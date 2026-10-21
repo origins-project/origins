@@ -1,0 +1,1004 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.json",
+  "title": "What the records share",
+  "description": "The values every kind of record is written with, each spelled as the corpus spells it: every scalar is text.",
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-{1,2}[a-z0-9]+)*$",
+      "description": "A record's name: lowercase words joined by hyphens, two joining the partners in a family's."
+    },
+    "date": {
+      "type": "string",
+      "description": "A date as GEDCOM writes one, every component optional: 1834, 12 MAR 1834, ABT 1834, BET 1830 AND 1835, FROM 1855 TO 1880, JULIAN 14 FEB 1799, or words in parentheses."
+    },
+    "flag": {
+      "enum": [
+        "true"
+      ],
+      "description": "The word true, or left out."
+    },
+    "note": {
+      "type": "string",
+      "description": "What is to be said of this alone, as markdown."
+    },
+    "language": {
+      "type": "string",
+      "description": "A BCP 47 language tag: en, de, la, zh-Latn-pinyin."
+    },
+    "citation": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-{1,2}[a-z0-9]+)*#[^#\\s]+( [ODA-][PSU-][DIN-][0-3-]?)?$",
+      "description": "A citation reference, source#anchor, optionally followed by a grade: whether the source is original, derivative or authored, whether the information is primary, secondary or undetermined, whether the evidence is direct, indirect or negative, and a weight from 0 to 3, - for a question not assessed."
+    },
+    "sources": {
+      "type": "array",
+      "description": "The citations it rests on.",
+      "items": {
+        "$ref": "common.json#/$defs/citation"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "The researcher's own groupings, words as written.",
+      "items": {
+        "type": "string",
+        "pattern": "\\S",
+        "description": "A tag, a word as written."
+      }
+    },
+    "links": {
+      "type": "array",
+      "description": "Where it is online and how what it stands for is reached.",
+      "items": {
+        "$ref": "common.json#/$defs/link"
+      }
+    },
+    "link": {
+      "description": "A URL, or a mapping of the URL, its type, a title and a note. A telephone is tel:, an email mailto:.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The URL."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "pattern": "\\S",
+              "description": "The URL."
+            },
+            "type": {
+              "type": "string",
+              "description": "What kind of link it is, an open word: web-search, fax."
+            },
+            "title": {
+              "type": "string",
+              "description": "The link's title."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "url"
+          ]
+        }
+      ]
+    },
+    "identifier": {
+      "description": "An identifier, or a mapping of it with a note and sources.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The identifier."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "\\S",
+              "description": "The identifier."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            },
+            "sources": {
+              "$ref": "common.json#/$defs/sources"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "id"
+          ]
+        }
+      ]
+    },
+    "ids": {
+      "type": "object",
+      "description": "Maps the name of a service to the identifier the record has there — familysearch, ancestry, wikitree, wikidata, geonames — or a list of them, the one it goes by now first.",
+      "additionalProperties": {
+        "description": "The identifiers the record has at the service.",
+        "oneOf": [
+          {
+            "$ref": "common.json#/$defs/identifier"
+          },
+          {
+            "type": "array",
+            "description": "The identifiers, the one it goes by now first.",
+            "items": {
+              "$ref": "common.json#/$defs/identifier"
+            }
+          }
+        ]
+      }
+    },
+    "sameAsEntry": {
+      "description": "A record of the same kind this one is said to be the same as: its slug, or a mapping of id or name, a note and sources.",
+      "oneOf": [
+        {
+          "$ref": "common.json#/$defs/slug"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "common.json#/$defs/slug",
+              "description": "The record's slug."
+            },
+            "name": {
+              "type": "string",
+              "pattern": "\\S",
+              "description": "The name of one with no record here."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            },
+            "sources": {
+              "$ref": "common.json#/$defs/sources"
+            }
+          },
+          "additionalProperties": false,
+          "oneOf": [
+            {
+              "required": [
+                "id"
+              ]
+            },
+            {
+              "required": [
+                "name"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sameAs": {
+      "type": "array",
+      "description": "The records of its kind it is said to be the same as: a claim waiting to be settled, as a merge or by removing it.",
+      "items": {
+        "$ref": "common.json#/$defs/sameAsEntry"
+      }
+    },
+    "age": {
+      "type": "string",
+      "pattern": "^\\s*([0-9]+|([<>]\\s*)?([0-9]+[yY](\\s+[0-9]+[mM])?(\\s+[0-9]+[wW])?(\\s+[0-9]+[dD])?|[0-9]+[mM](\\s+[0-9]+[wW])?(\\s+[0-9]+[dD])?|[0-9]+[wW](\\s+[0-9]+[dD])?|[0-9]+[dD]))\\s*$",
+      "description": "An age as GEDCOM 7 writes one: 67y, 3m 12d, < 1y, > 80y, a bare number being years."
+    },
+    "statedAge": {
+      "description": "The age the record gives the person it is about, or a mapping of it with a note and sources.",
+      "oneOf": [
+        {
+          "$ref": "common.json#/$defs/age"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "$ref": "common.json#/$defs/age"
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            },
+            "sources": {
+              "$ref": "common.json#/$defs/sources"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "value"
+          ]
+        }
+      ]
+    },
+    "statedCause": {
+      "description": "The cause, of a death above all, or a mapping of it with a note and sources.",
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "The cause as the record gives it."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string",
+              "pattern": "\\S",
+              "description": "The cause as the record gives it."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            },
+            "sources": {
+              "$ref": "common.json#/$defs/sources"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "value"
+          ]
+        }
+      ]
+    },
+    "region": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "description": "Four fractions of the picture — left, top, right, bottom — so it survives the picture being scaled.",
+      "items": {
+        "type": "string",
+        "pattern": "^\\s*[-+]?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([eE][-+]?[0-9]+)?\\s*$"
+      }
+    },
+    "attribute": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "What the value is, an open word: agency, fathers-age, classification, temple, status."
+        },
+        "value": {
+          "type": "string",
+          "description": "The value as the record gave it."
+        },
+        "date": {
+          "$ref": "common.json#/$defs/date",
+          "description": "When the record says it was so."
+        },
+        "note": {
+          "$ref": "common.json#/$defs/note"
+        },
+        "sources": {
+          "$ref": "common.json#/$defs/sources"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "description": "Something the record says that no field holds."
+    },
+    "attributes": {
+      "type": "array",
+      "description": "Whatever else the record says of it that no field holds.",
+      "items": {
+        "$ref": "common.json#/$defs/attribute"
+      }
+    },
+    "nonEvent": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The type of event it was not, in the words an event's type is written in."
+        },
+        "date": {
+          "$ref": "common.json#/$defs/date",
+          "description": "The date over which it did not happen, none meaning never."
+        },
+        "note": {
+          "$ref": "common.json#/$defs/note"
+        },
+        "sources": {
+          "$ref": "common.json#/$defs/sources"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "description": "Something that did not happen."
+    },
+    "not": {
+      "type": "array",
+      "description": "What did not happen, said apart from what did.",
+      "items": {
+        "$ref": "common.json#/$defs/nonEvent"
+      }
+    },
+    "address": {
+      "description": "An address: its lines, or a mapping of the lines, the parts or both.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The address as lines of text, as written on an envelope."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "lines": {
+              "type": "string",
+              "description": "The address as lines of text, as written on an envelope."
+            },
+            "street": {
+              "type": "string",
+              "description": "The street and number."
+            },
+            "locality": {
+              "type": "string",
+              "description": "The locality, below the city."
+            },
+            "city": {
+              "type": "string",
+              "description": "The city."
+            },
+            "parish": {
+              "type": "string",
+              "description": "The parish."
+            },
+            "county": {
+              "type": "string",
+              "description": "The county."
+            },
+            "state": {
+              "type": "string",
+              "description": "The state."
+            },
+            "postal": {
+              "type": "string",
+              "description": "The postal code."
+            },
+            "country": {
+              "type": "string",
+              "description": "The country."
+            },
+            "date": {
+              "$ref": "common.json#/$defs/date",
+              "description": "When the address was so."
+            },
+            "links": {
+              "$ref": "common.json#/$defs/links",
+              "description": "The telephone and email that go with it."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            },
+            "sources": {
+              "$ref": "common.json#/$defs/sources"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "addresses": {
+      "type": "array",
+      "description": "Where it is or has been.",
+      "items": {
+        "$ref": "common.json#/$defs/address"
+      }
+    },
+    "researcherAddress": {
+      "description": "An address: its lines, or a mapping of the lines, the parts or both.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The address as lines of text, as written on an envelope."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "lines": {
+              "type": "string",
+              "description": "The address as lines of text, as written on an envelope."
+            },
+            "street": {
+              "type": "string",
+              "description": "The street and number."
+            },
+            "locality": {
+              "type": "string",
+              "description": "The locality, below the city."
+            },
+            "city": {
+              "type": "string",
+              "description": "The city."
+            },
+            "parish": {
+              "type": "string",
+              "description": "The parish."
+            },
+            "county": {
+              "type": "string",
+              "description": "The county."
+            },
+            "state": {
+              "type": "string",
+              "description": "The state."
+            },
+            "postal": {
+              "type": "string",
+              "description": "The postal code."
+            },
+            "country": {
+              "type": "string",
+              "description": "The country."
+            },
+            "date": {
+              "$ref": "common.json#/$defs/date",
+              "description": "When the address was so."
+            },
+            "links": {
+              "$ref": "common.json#/$defs/links",
+              "description": "The telephone and email that go with it."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "image": {
+      "description": "A picture beside the record as its path, or the path with the region of it that matters.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The path of the file from the record's directory."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file": {
+              "type": "string",
+              "pattern": "\\S",
+              "description": "The path of the file from the record's directory."
+            },
+            "region": {
+              "$ref": "common.json#/$defs/region"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "file"
+          ]
+        }
+      ]
+    },
+    "depicted": {
+      "description": "Somebody a picture shows, as their slug or a mapping of the slug with the part of the picture that is them.",
+      "oneOf": [
+        {
+          "$ref": "common.json#/$defs/slug"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "person": {
+              "$ref": "common.json#/$defs/slug",
+              "description": "The person's record."
+            },
+            "region": {
+              "$ref": "common.json#/$defs/region",
+              "description": "The part of the picture that is them."
+            },
+            "attributes": {
+              "$ref": "common.json#/$defs/attributes"
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "person"
+          ]
+        }
+      ]
+    },
+    "mediaEntry": {
+      "description": "One of the record's files: its path, or a mapping of the path and what is said of the file.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The path of the file from the record's directory."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "private": {
+              "$ref": "common.json#/$defs/flag",
+              "description": "Marks the picture as not for sharing: a hidden view leaves it out."
+            },
+            "file": {
+              "type": "string",
+              "pattern": "\\S",
+              "description": "The path of the file from the record's directory, which may lead into another record's directory."
+            },
+            "type": {
+              "type": "string",
+              "description": "The medium, an open word: photo, tombstone, newspaper, map, manuscript."
+            },
+            "title": {
+              "type": "string",
+              "description": "The picture's title."
+            },
+            "date": {
+              "$ref": "common.json#/$defs/date",
+              "description": "When the picture was made."
+            },
+            "place": {
+              "$ref": "common.json#/$defs/slug",
+              "description": "The place the picture was made, a place slug."
+            },
+            "region": {
+              "$ref": "common.json#/$defs/region",
+              "description": "The part of the picture the record is about, where that is not a person."
+            },
+            "depicts": {
+              "type": "array",
+              "description": "The people in the picture.",
+              "items": {
+                "$ref": "common.json#/$defs/depicted"
+              }
+            },
+            "attributes": {
+              "$ref": "common.json#/$defs/attributes"
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            },
+            "sources": {
+              "$ref": "common.json#/$defs/sources"
+            },
+            "tags": {
+              "$ref": "common.json#/$defs/tags"
+            },
+            "ids": {
+              "$ref": "common.json#/$defs/ids"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "file"
+          ]
+        }
+      ]
+    },
+    "media": {
+      "type": "array",
+      "description": "What is in the files beside the record, each entry naming one of them.",
+      "items": {
+        "$ref": "common.json#/$defs/mediaEntry"
+      }
+    },
+    "surname": {
+      "description": "A surname, or a mapping of it and what is said of it.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The surname."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "pattern": "\\S",
+              "description": "The surname."
+            },
+            "prefix": {
+              "type": "string",
+              "description": "Its prefix: de, van der."
+            },
+            "connector": {
+              "type": "string",
+              "description": "What joins it to the next, y or a hyphen."
+            },
+            "origin": {
+              "type": "string",
+              "description": "Where it came from, an open word: patrilineal, matrilineal, patronymic, taken, feudal."
+            },
+            "primary": {
+              "$ref": "common.json#/$defs/flag",
+              "description": "The one the name is filed under, where that is not the first."
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name"
+          ]
+        }
+      ]
+    },
+    "surnames": {
+      "description": "The surname, a double one included, or a list where a name has several or something is said of one.",
+      "oneOf": [
+        {
+          "$ref": "common.json#/$defs/surname"
+        },
+        {
+          "type": "array",
+          "description": "The surnames, in the order they are written.",
+          "items": {
+            "$ref": "common.json#/$defs/surname"
+          }
+        }
+      ]
+    },
+    "personName": {
+      "description": "A name: its words as the record wrote them, or a mapping of its parts.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The name as the record wrote it."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "private": {
+              "$ref": "common.json#/$defs/flag",
+              "description": "Marks the name as not for sharing: a hidden view leaves it out."
+            },
+            "text": {
+              "type": "string",
+              "description": "The name as the record wrote it, not divided: a spelling to match on, and beside parts the record's own words where the parts do not spell them."
+            },
+            "prefix": {
+              "type": "string",
+              "description": "A title before the name: Dott., Don, Avv."
+            },
+            "given": {
+              "type": "string",
+              "description": "The given names."
+            },
+            "call": {
+              "type": "string",
+              "description": "The given name the person went by, usually one of given."
+            },
+            "nickname": {
+              "type": "string",
+              "description": "A familiar name: Gianni."
+            },
+            "family-nickname": {
+              "type": "string",
+              "description": "The name a branch of the family went by: i Rossi detti \"del Fabbro\"."
+            },
+            "surname-prefix": {
+              "type": "string",
+              "description": "de, van der — kept apart so the surname sorts and groups on its own."
+            },
+            "surname": {
+              "$ref": "common.json#/$defs/surnames"
+            },
+            "suffix": {
+              "type": "string",
+              "description": "sen., jr., III."
+            },
+            "group": {
+              "type": "string",
+              "description": "The surname the name is filed among where its own spelling would file it apart: Rosi among the Rossi."
+            },
+            "lang": {
+              "$ref": "common.json#/$defs/language",
+              "description": "The language or script the name is written in, as a BCP 47 tag."
+            },
+            "type": {
+              "type": "string",
+              "description": "What the name is, an open word: birth, married, aka, immigrant, religious, professional."
+            },
+            "display": {
+              "type": "string",
+              "description": "A pattern of the name's parts, each named in braces, that the name is written out by: {surname} {given}."
+            },
+            "sort": {
+              "type": "string",
+              "description": "A pattern of the name's parts, each named in braces, that the name is sorted by."
+            },
+            "from": {
+              "$ref": "common.json#/$defs/date",
+              "description": "When the name began to be borne."
+            },
+            "until": {
+              "$ref": "common.json#/$defs/date",
+              "description": "When the name stopped being borne."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            },
+            "sources": {
+              "$ref": "common.json#/$defs/sources"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "unflaggedName": {
+      "description": "A name standing for somebody: its words as the record wrote them, or a mapping of its parts.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The name as the record wrote it."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "description": "The name as the record wrote it, not divided: a spelling to match on, and beside parts the record's own words where the parts do not spell them."
+            },
+            "prefix": {
+              "type": "string",
+              "description": "A title before the name: Dott., Don, Avv."
+            },
+            "given": {
+              "type": "string",
+              "description": "The given names."
+            },
+            "call": {
+              "type": "string",
+              "description": "The given name the person went by, usually one of given."
+            },
+            "nickname": {
+              "type": "string",
+              "description": "A familiar name: Gianni."
+            },
+            "family-nickname": {
+              "type": "string",
+              "description": "The name a branch of the family went by: i Rossi detti \"del Fabbro\"."
+            },
+            "surname-prefix": {
+              "type": "string",
+              "description": "de, van der — kept apart so the surname sorts and groups on its own."
+            },
+            "surname": {
+              "$ref": "common.json#/$defs/surnames"
+            },
+            "suffix": {
+              "type": "string",
+              "description": "sen., jr., III."
+            },
+            "group": {
+              "type": "string",
+              "description": "The surname the name is filed among where its own spelling would file it apart: Rosi among the Rossi."
+            },
+            "lang": {
+              "$ref": "common.json#/$defs/language",
+              "description": "The language or script the name is written in, as a BCP 47 tag."
+            },
+            "type": {
+              "type": "string",
+              "description": "What the name is, an open word: birth, married, aka, immigrant, religious, professional."
+            },
+            "display": {
+              "type": "string",
+              "description": "A pattern of the name's parts, each named in braces, that the name is written out by: {surname} {given}."
+            },
+            "sort": {
+              "type": "string",
+              "description": "A pattern of the name's parts, each named in braces, that the name is sorted by."
+            },
+            "from": {
+              "$ref": "common.json#/$defs/date",
+              "description": "When the name began to be borne."
+            },
+            "until": {
+              "$ref": "common.json#/$defs/date",
+              "description": "When the name stopped being borne."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            },
+            "sources": {
+              "$ref": "common.json#/$defs/sources"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "named": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "common.json#/$defs/slug",
+          "description": "The person's record, or unknown for somebody the record says was there and does not name."
+        },
+        "name": {
+          "$ref": "common.json#/$defs/unflaggedName",
+          "description": "The name the record gives somebody who has no record."
+        },
+        "role": {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "Their part in it, an open word: godfather, godmother, witness, informant, officiant, groom, bride."
+        },
+        "age": {
+          "$ref": "common.json#/$defs/age",
+          "description": "The age the record gives them."
+        },
+        "attributes": {
+          "$ref": "common.json#/$defs/attributes"
+        },
+        "note": {
+          "$ref": "common.json#/$defs/note"
+        },
+        "sources": {
+          "$ref": "common.json#/$defs/sources"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "role"
+      ],
+      "oneOf": [
+        {
+          "required": [
+            "person"
+          ]
+        },
+        {
+          "required": [
+            "name"
+          ]
+        }
+      ]
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "private": {
+          "$ref": "common.json#/$defs/flag",
+          "description": "Marks the event as not for sharing: a hidden view leaves it out."
+        },
+        "type": {
+          "type": "string",
+          "description": "What it was; the list is open, since real records produce types no fixed list anticipates."
+        },
+        "value": {
+          "type": "string",
+          "description": "The event's own words: what was held, or what the record says of what happened."
+        },
+        "date": {
+          "$ref": "common.json#/$defs/date",
+          "description": "When; for a fact usually a period, or none at all."
+        },
+        "sort-date": {
+          "$ref": "common.json#/$defs/date",
+          "description": "Where to put it in order when its date does not say, or there is none: the researcher's placing, not the record's."
+        },
+        "place": {
+          "$ref": "common.json#/$defs/slug",
+          "description": "A place slug."
+        },
+        "address": {
+          "$ref": "common.json#/$defs/address",
+          "description": "Where in the place: a residence's house, the church a wedding was in."
+        },
+        "age": {
+          "$ref": "common.json#/$defs/statedAge"
+        },
+        "cause": {
+          "$ref": "common.json#/$defs/statedCause"
+        },
+        "with": {
+          "type": "array",
+          "description": "The people the record names besides whom the event is about.",
+          "items": {
+            "$ref": "common.json#/$defs/named"
+          }
+        },
+        "family": {
+          "$ref": "common.json#/$defs/slug",
+          "description": "On a person's event, the family the record ties it to."
+        },
+        "attributes": {
+          "$ref": "common.json#/$defs/attributes"
+        },
+        "media": {
+          "$ref": "common.json#/$defs/media",
+          "description": "The pictures of it, as a record's are."
+        },
+        "links": {
+          "$ref": "common.json#/$defs/links",
+          "description": "Where it is online, and how whoever held it was reached."
+        },
+        "note": {
+          "$ref": "common.json#/$defs/note",
+          "description": "What is to be said of this event alone."
+        },
+        "sources": {
+          "$ref": "common.json#/$defs/sources",
+          "description": "The citations it rests on."
+        },
+        "tags": {
+          "$ref": "common.json#/$defs/tags"
+        },
+        "ids": {
+          "$ref": "common.json#/$defs/ids",
+          "description": "What an export identified it by, as a record's ids."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Something that happened, or a fact held."
+    },
+    "events": {
+      "type": "array",
+      "description": "What happened, and the facts held, in one list.",
+      "items": {
+        "$ref": "common.json#/$defs/event"
+      }
+    },
+    "placeRef": {
+      "description": "A place it lies within: its slug, or a mapping of it with dates, a note and sources.",
+      "oneOf": [
+        {
+          "$ref": "common.json#/$defs/slug"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "place": {
+              "$ref": "common.json#/$defs/slug",
+              "description": "The place's slug."
+            },
+            "from": {
+              "$ref": "common.json#/$defs/date",
+              "description": "When it began to lie within it."
+            },
+            "until": {
+              "$ref": "common.json#/$defs/date",
+              "description": "When it stopped."
+            },
+            "note": {
+              "$ref": "common.json#/$defs/note"
+            },
+            "sources": {
+              "$ref": "common.json#/$defs/sources"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "place"
+          ]
+        }
+      ]
+    },
+    "private": {
+      "$ref": "#/$defs/flag",
+      "description": "Marks the record as not for sharing: a hidden view leaves it out."
+    },
+    "body": {
+      "type": "string",
+      "description": "The markdown below the frontmatter: the researcher's prose."
+    }
+  }
+}

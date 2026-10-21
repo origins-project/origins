@@ -1,0 +1,173 @@
+name: release
+
+# A tag v* is a release. A push that changes what makes one builds a snapshot through
+# the same jobs, publishing nothing, so that the configuration is tried before a tag
+# needs it. GitHub matches no path filter against a tag.
+on:
+  push:
+    tags: ['v*']
+    branches: ['**']
+    paths:
+      - .goreleaser.yaml
+      - .github/workflows/release.yml
+      - .github/notes/**
+      - docker/**
+      - tools/notices/**
+      - tools/tryarchive.sh
+  workflow_dispatch:
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/') }}
+
+permissions:
+  contents: read
+
+jobs:
+  # A tag that fails CI publishes nothing. A branch has its own run of ci.yml.
+  ci:
+    if: startsWith(github.ref, 'refs/tags/')
+    uses: ./.github/workflows/ci.yml
+
+  build:
+    needs: ci
+    if: ${{ !failure() && !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    outputs:
+      version: ${{ fromJSON(steps.goreleaser.outputs.metadata).version }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      # Every binary embeds the application and the chart's WebAssembly, built once here.
+      - run: npm --prefix web ci
+      - run: npm --prefix web run build
+      - run: go run ./tools/notices -check
+
+      # A tag is given the notes written for it where there are any, and otherwise
+      # GoReleaser makes them from the commits since the tag before.
+      - name: Arguments
+        id: args
+        run: |
+          if [ "$GITHUB_REF_TYPE" != tag ]; then
+            echo "args=release --clean --snapshot" >> "$GITHUB_OUTPUT"
+          elif [ -f ".github/notes/$GITHUB_REF_NAME.md" ]; then
+            echo "args=release --clean --release-notes .github/notes/$GITHUB_REF_NAME.md" >> "$GITHUB_OUTPUT"
+          else
+            echo "args=release --clean" >> "$GITHUB_OUTPUT"
+          fi
+
+      - id: goreleaser
+        uses: goreleaser/goreleaser-action@v7
+        with:
+          version: v2.18.3
+          args: ${{ steps.args.outputs.args }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/attest-build-provenance@v4
+        with:
+          subject-checksums: dist/SHA256SUMS
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: archives
+          path: |
+            dist/*.tar.gz
+            dist/*.zip
+            dist/SHA256SUMS
+          if-no-files-found: error
+
+  # Each archive unpacked and run on the system it was built for.
+  try:
+    needs: build
+    if: ${{ !failure() && !cancelled() }}
+    name: try ${{ matrix.archive }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, archive: linux_amd64.tar.gz }
+          - { os: ubuntu-24.04-arm, archive: linux_arm64.tar.gz }
+          - { os: macos-15-intel, archive: darwin_amd64.tar.gz }
+          - { os: macos-latest, archive: darwin_arm64.tar.gz }
+          - { os: windows-latest, archive: windows_amd64.zip }
+          - { os: windows-11-arm, archive: windows_arm64.zip }
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
+        with:
+          name: archives
+          path: dist
+      - run: tools/tryarchive.sh "dist/origins_${VERSION}_${{ matrix.archive }}" "$VERSION"
+        env:
+          VERSION: ${{ needs.build.outputs.version }}
+
+  # The image is built from docker/Dockerfile for both platforms, and pushed for a tag.
+  image:
+    needs: [build, try]
+    if: ${{ !failure() && !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: docker/setup-qemu-action@v4
+      - uses: docker/setup-buildx-action@v4
+      - if: startsWith(github.ref, 'refs/tags/')
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ghcr.io/origins-project/origins
+          tags: type=semver,pattern={{version}}
+      - uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: docker/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          build-args: |
+            VERSION=${{ needs.build.outputs.version }}
+            COMMIT=${{ github.sha }}
+          push: ${{ startsWith(github.ref, 'refs/tags/') }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+  # The draft GoReleaser wrote is published once everything else has passed.
+  publish:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: [build, try, image]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - run: gh release edit "$GITHUB_REF_NAME" --draft=false --repo "$GITHUB_REPOSITORY"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
